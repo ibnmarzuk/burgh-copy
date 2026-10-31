@@ -34,8 +34,21 @@ function ContactIcon({ type }) {
   return <svg {...common}><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" /><circle cx="12" cy="12" r="4" /><circle cx="17.6" cy="6.7" r=".8" fill="currentColor" stroke="none" /></svg>
 }
 
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+function getAppPath() {
+  const pathname = window.location.pathname
+  if (BASE_PATH && pathname.startsWith(BASE_PATH)) {
+    const appPath = pathname.slice(BASE_PATH.length)
+    return appPath || '/'
+  }
+  return pathname || '/'
+}
+
 function navigate(path) {
-  window.history.pushState({}, '', path)
+  const cleanPath = path.startsWith('/') ? path : `/${path}`
+  const destination = `${BASE_PATH}${cleanPath}` || '/'
+  window.history.pushState({}, '', destination)
   window.dispatchEvent(new PopStateEvent('popstate'))
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
@@ -50,7 +63,7 @@ function Logo() {
 
 function Header() {
   const [open, setOpen] = useState(false)
-  const path = window.location.pathname
+  const path = getAppPath()
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -220,7 +233,14 @@ function Contact() {
   const initialDivision = requestedDivision === 'homes' ? 'BURGH HOMES' : requestedDivision === 'energy' ? 'BURGH ENERGY' : 'General Enquiry'
   const [form, setForm] = useState({ name: '', email: '', phone: '', division: initialDivision, subject: '', message: '' })
   const update = e => setForm({ ...form, [e.target.name]: e.target.value })
-  const submit = e => { e.preventDefault(); const body = `Full Name: ${form.name}\nEmail: ${form.email}\nTelephone: ${form.phone}\nBusiness Division: ${form.division}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`; window.open(`${WHATSAPP}?text=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer'); setSent(true) }
+  const submit = e => {
+    e.preventDefault()
+    const body = `Full Name: ${form.name}\nEmail: ${form.email}\nTelephone: ${form.phone}\nBusiness Division: ${form.division}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
+    const whatsappUrl = `${WHATSAPP}?text=${encodeURIComponent(body)}`
+    const opened = window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+    if (!opened) window.location.assign(whatsappUrl)
+    setSent(true)
+  }
   return <>
     <PageIntro eyebrow="Contact BURGH" title={<>Let’s start a<br /><em>conversation.</em></>} description="Whether you are exploring residential properties, seeking energy solutions or interested in a business partnership, contact BURGH to discuss your requirements." />
     <section className="section-pad contact-section"><div className="container contact-grid"><div className="contact-details"><span className="eyebrow">Reach the right team</span><h2>Good opportunities<br /><em>begin with a hello.</em></h2><p>Tell us what you are looking for and we will help direct your enquiry to the right BURGH division.</p><div className="contact-lines"><a className="contact-item" href="tel:+2348038493510" aria-label={`Call BURGH on ${PHONE}`}><span className="contact-icon"><ContactIcon type="phone" /></span><span className="contact-copy"><span>Telephone</span><strong>{PHONE}</strong></span><span className="contact-arrow"><Arrow /></span></a><a className="contact-item" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Message BURGH on WhatsApp"><span className="contact-icon whatsapp"><ContactIcon type="whatsapp" /></span><span className="contact-copy"><span>WhatsApp</span><strong>{PHONE}</strong></span><span className="contact-arrow"><Arrow /></span></a><a className="contact-item" href={`mailto:${EMAIL}`} aria-label={`Email BURGH at ${EMAIL}`}><span className="contact-icon"><ContactIcon type="email" /></span><span className="contact-copy"><span>Email</span><strong>{EMAIL}</strong></span><span className="contact-arrow"><Arrow /></span></a><a className="contact-item" href="https://www.instagram.com/burgh.homes/" target="_blank" rel="noreferrer" aria-label="Open BURGH HOMES on Instagram"><span className="contact-icon instagram"><ContactIcon type="instagram" /></span><span className="contact-copy"><span>Instagram</span><strong>@Burgh.homes</strong></span><span className="contact-arrow"><Arrow /></span></a></div></div><form className="enquiry-form" onSubmit={submit}><div className="form-head"><span className="eyebrow">Enquiry form</span><h3>How can we help?</h3></div><label>Full Name<input required name="name" value={form.name} onChange={update} placeholder="Your full name" /></label><div className="form-row"><label>Email Address<input required type="email" name="email" value={form.email} onChange={update} placeholder="you@example.com" /></label><label>Telephone Number<input name="phone" value={form.phone} onChange={update} placeholder="Your phone number" /></label></div><label>Business Division<select name="division" value={form.division} onChange={update}><option>General Enquiry</option><option>BURGH HOMES</option><option>BURGH ENERGY</option></select></label><label>Subject<input required name="subject" value={form.subject} onChange={update} placeholder="What would you like to discuss?" /></label><label>Message<textarea required name="message" value={form.message} onChange={update} placeholder="Tell us a little more about your requirements..."></textarea></label><button className="button button-navy" type="submit">Send via WhatsApp <Arrow light /></button>{sent && <p className="form-success">WhatsApp opened with your enquiry details ready to send.</p>}<a className="form-email-link" href={`mailto:${EMAIL}`}>Prefer email? Contact {EMAIL}</a></form></div></section>
@@ -228,8 +248,8 @@ function Contact() {
 }
 
 function App() {
-  const [path, setPath] = useState(window.location.pathname)
-  useEffect(() => { const onPop = () => setPath(window.location.pathname); window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop) }, [])
+  const [path, setPath] = useState(getAppPath())
+  useEffect(() => { const onPop = () => setPath(getAppPath()); window.addEventListener('popstate', onPop); return () => window.removeEventListener('popstate', onPop) }, [])
   useEffect(() => { const titles = { '/': 'BURGH | Real Estate. Energy. Building Value for the Future.', '/about': 'About BURGH | A business built for what comes next.', '/homes': 'BURGH HOMES | A better place to call home.', '/energy': 'BURGH ENERGY | Powering today’s needs.', '/contact': 'Contact BURGH | Let’s start a conversation.' }; document.title = titles[path] || titles['/']; }, [path])
   const page = path === '/about' ? <About /> : path === '/homes' ? <Homes /> : path === '/energy' ? <Energy /> : path === '/contact' ? <Contact /> : <Home />
   return <><Header /><main>{page}</main><Footer /></>
