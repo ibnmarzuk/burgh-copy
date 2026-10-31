@@ -37,3 +37,28 @@ p { color: var(--muted); margin: 0 0 1rem; }.lead { font-size: 1.25rem; line-hei
 .portfolio-tile p { max-width:450px; margin:0; }
 .portfolio-disclaimer { font-size:.76rem; margin-top:20px; max-width:800px; }
 @media (max-width:680px) { .energy-portfolio-grid { grid-template-columns:1fr; } .portfolio-tile { padding:28px 24px; min-height:0; } }
+
+
+/* Accessibility and interaction polish */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
