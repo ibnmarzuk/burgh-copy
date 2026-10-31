@@ -159,12 +159,12 @@ function Home() {
       <div className="hero-image"></div>
       <div className="hero-overlay"></div>
       <div className="container hero-content">
-        <span className="eyebrow hero-eyebrow">BURGH / EST. FORWARD</span>
+        <span className="eyebrow hero-eyebrow">TWO DIVISIONS. ONE DIRECTION.</span>
         <h1>Real Estate.<br /><span>Energy.</span><br />Building value<br />for the future.</h1>
         <p>Two focused divisions. One clear purpose: to create dependable value for people, businesses and the communities they call home.</p>
         <div className="hero-actions"><button className="button button-gold" onClick={() => navigate('/about')}>Discover BURGH <Arrow light /></button><button className="scroll-cue" onClick={() => document.getElementById('divisions')?.scrollIntoView({ behavior: 'smooth' })}><span className="scroll-line"></span>Scroll to explore</button></div>
       </div>
-      <div className="hero-stamp"><span>01</span><span>Two divisions<br />one direction</span></div>
+      <div className="hero-stamp"><span>01</span><span>BURGH HOMES<br />BURGH ENERGY<br />One shared direction</span></div>
     </section>
 
     <section id="divisions" className="intro-section section-pad">
