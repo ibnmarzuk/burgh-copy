@@ -43,8 +43,7 @@ function navigate(path) {
 function Logo() {
   return (
     <button className="logo" onClick={() => navigate('/')} aria-label="BURGH home">
-      <span className="logo-mark"><span></span><span></span><span></span></span>
-      <span className="logo-word">BURGH</span>
+      <img className="logo-image" src={`${ASSET_BASE}burgh-logo.svg`} alt="BURGH" />
     </button>
   )
 }
