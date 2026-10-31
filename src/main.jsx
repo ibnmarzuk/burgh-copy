@@ -107,10 +107,10 @@ function PageIntro({ eyebrow, title, description, tone = 'navy' }) {
   )
 }
 
-function SplitCard({ type, title, copy, image, path, index }) {
+function SplitCard({ type, title, copy, path, index }) {
   return (
     <article className={`split-card ${type}`}>
-      <div className="split-card-image" style={{ backgroundImage: `url(${image})` }}>
+      <div className="split-card-image">
         <span className="card-index">0{index}</span>
         <span className="card-tag">BURGH / {type === 'homes' ? '01' : '02'}</span>
       </div>
@@ -162,8 +162,8 @@ function Home() {
     </section>
 
     <section className="container division-cards" aria-label="Business divisions">
-      <SplitCard type="homes" index="1" title="A better place to call home." copy="Residential property sales and homeownership opportunities shaped around real needs, preferences and budgets." image={`${ASSET_BASE}assets/burgh-homes.jpg`} path="/homes" />
-      <SplitCard type="energy" index="2" title="Powering today's needs. Enabling tomorrow's energy." copy="Dependable downstream energy and renewable solutions for an evolving world." image={`${ASSET_BASE}assets/burgh-energy.jpg`} path="/energy" />
+      <SplitCard type="homes" index="1" title="A better place to call home." copy="Residential property sales and homeownership opportunities shaped around real needs, preferences and budgets." path="/homes" />
+      <SplitCard type="energy" index="2" title="Powering today's needs. Enabling tomorrow's energy." copy="Dependable downstream energy and renewable solutions for an evolving world." path="/energy" />
     </section>
 
     <Values />
@@ -208,6 +208,7 @@ function Energy() {
     <section className="division-hero energy-hero"><div className="division-hero-image"></div><div className="division-hero-shade"></div><div className="container division-hero-content"><span className="eyebrow">BURGH / DIVISION 02</span><h1>BURGH<br /><em>ENERGY</em></h1><p>Powering today’s needs. Enabling tomorrow’s energy.</p></div></section>
     <section className="section-pad division-intro"><div className="container intro-grid"><div><span className="eyebrow">The energy perspective</span><h2>Reliable today.<br /><em>Ready for tomorrow.</em></h2></div><div><p className="lead">BURGH ENERGY is focused on downstream oil and gas and renewable energy solutions.</p><p>Our strategic direction centres on dependable energy supply, operational efficiency, innovation, safety and the development of cleaner energy alternatives for commercial, industrial and other customer segments.</p><button className="text-link" onClick={() => navigate('/contact?division=energy')}>Discuss your requirements <Arrow /></button></div></div></section>
     <section className="energy-offerings"><div className="container"><div className="offering-grid"><article className="offering-panel petroleum"><span className="eyebrow">01 / Downstream</span><h2>Oil &amp; gas</h2><p>Petroleum products and energy pathways, presented around verified operational capabilities and necessary approvals.</p><div className="product-list">{energyProducts.map((p, i) => <div key={p}><span>{String(i + 1).padStart(2, '0')}</span>{p}</div>)}</div></article><article className="offering-panel green"><span className="eyebrow">02 / Renewable</span><h2>Green energy</h2><p>Appropriate energy solutions that support business needs, energy management and sustainability objectives.</p><div className="product-list">{energyGreen.map((p, i) => <div key={p}><span>{String(i + 1).padStart(2, '0')}</span>{p}</div>)}</div></article></div></div></section>
+    <section className="section-pad energy-portfolio"><div className="container"><div className="section-heading split-heading"><div><span className="eyebrow">BURGH ENERGY / PORTFOLIO</span><h2>Energy solutions for<br /><em>real world needs.</em></h2></div><p>Explore the key service areas that shape BURGH ENERGY’s portfolio across conventional energy and emerging cleaner energy solutions.</p></div><div className="energy-portfolio-grid"><article className="portfolio-tile"><span>01 / DOWNSTREAM</span><h3>Oil &amp; Gas Supply</h3><p>Petroleum product supply pathways and downstream energy requirements, subject to confirmed availability and relevant approvals.</p></article><article className="portfolio-tile"><span>02 / RESIDENTIAL &amp; COMMERCIAL</span><h3>Solar Energy</h3><p>Solar power options designed around energy demand, site conditions and practical operating needs.</p></article><article className="portfolio-tile"><span>03 / STORAGE</span><h3>Energy Storage</h3><p>Battery storage and hybrid system options to support resilience and more effective energy use.</p></article><article className="portfolio-tile"><span>04 / EFFICIENCY</span><h3>Smarter Energy Use</h3><p>Energy efficiency and carbon reduction opportunities for businesses exploring more sustainable operations.</p></article></div><p className="portfolio-disclaimer">Portfolio areas describe service focus, not a claim of completed projects. Specific products, availability and project credentials should be confirmed directly with BURGH.</p></div></section>
     <section className="section-pad energy-strategy"><div className="container strategy-grid"><div><span className="eyebrow">Strategic objective</span><h2>Address today’s needs.<br /><em>Pursue better energy.</em></h2></div><div><p className="lead">BURGH ENERGY aims to address current energy needs while pursuing opportunities in renewable technologies and more sustainable energy solutions.</p><p>Our work is guided by safety first, integrity, innovation, customer focus, sustainability and excellence.</p></div></div></section>
     <section className="cta-band energy-cta"><div className="container cta-inner"><span className="eyebrow">BURGH ENERGY</span><h2>Let’s discuss your<br /><em>energy requirements.</em></h2><button className="button button-light" onClick={() => navigate('/contact?division=energy')}>Make an energy enquiry <Arrow /></button></div></section>
   </>
