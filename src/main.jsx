@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './styles.css'
 
 const EMAIL = 'mustaphakadri@yahoo.co.uk'
-const PHONE = '08038493510'
+const PHONE = '+234 803 849 3510'
 const WHATSAPP = 'https://wa.me/2348038493510'
 const ASSET_BASE = import.meta.env.BASE_URL
 
@@ -143,7 +143,7 @@ function Values() {
       <div className="container">
         <div className="section-heading split-heading">
           <div><span className="eyebrow">The BURGH standard</span><h2>Built on principles<br />that <em>hold.</em></h2></div>
-          <p>We are shaping a business that earns trust over time — through the quality of what we do and the way we do it.</p>
+          <p>We are shaping a business that earns trust over time, through the quality of what we do and the way we do it.</p>
         </div>
         <div className="values-grid">
           {values.map(([num, title, copy]) => <div className="value-item" key={title}><span className="value-number">{num}</span><h3>{title}</h3><p>{copy}</p></div>)}
@@ -162,7 +162,7 @@ function Home() {
         <span className="eyebrow hero-eyebrow">TWO DIVISIONS. ONE DIRECTION.</span>
         <h1>Real Estate.<br /><span>Energy.</span><br />Building value<br />for the future.</h1>
         <p>Two focused divisions. One clear purpose: to create dependable value for people, businesses and the communities they call home.</p>
-        <div className="hero-actions"><button className="button button-gold" onClick={() => navigate('/about')}>Discover BURGH <Arrow light /></button><button className="scroll-cue" onClick={() => document.getElementById('divisions')?.scrollIntoView({ behavior: 'smooth' })}><span className="scroll-line"></span>Scroll to explore</button></div>
+        <div className="hero-actions"><button className="button button-gold" onClick={() => navigate('/homes')}>Explore BURGH HOMES <Arrow light /></button><button className="button button-outline-light" onClick={() => navigate('/energy')}>Explore BURGH ENERGY <Arrow light /></button><button className="scroll-cue" onClick={() => document.getElementById('divisions')?.scrollIntoView({ behavior: 'smooth' })}><span className="scroll-line"></span>Scroll to explore</button></div>
       </div>
       <div className="hero-stamp"><span>01</span><span>BURGH HOMES<br />BURGH ENERGY<br />One shared direction</span></div>
     </section>
@@ -170,7 +170,7 @@ function Home() {
     <section id="divisions" className="intro-section section-pad">
       <div className="container intro-grid">
         <div><span className="eyebrow">One brand. Two possibilities.</span><h2>Where everyday needs meet <em>long-term thinking.</em></h2></div>
-        <div><p className="lead">BURGH brings together residential real estate and energy solutions through two dedicated business divisions.</p><p>Our focus is simple: quality, integrity, customer value and professional service delivery — with a forward-looking view of what comes next.</p><button className="text-link" onClick={() => navigate('/about')}>More about BURGH <Arrow /></button></div>
+        <div><p className="lead">BURGH brings together residential real estate and energy solutions through two dedicated business divisions.</p><p>Our focus is simple: quality, integrity, customer value and professional service delivery, with a forward-looking view of what comes next.</p><button className="text-link" onClick={() => navigate('/about')}>More about BURGH <Arrow /></button></div>
       </div>
     </section>
 
