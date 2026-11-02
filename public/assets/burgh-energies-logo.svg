@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+<title id="title">BURGH Energies</title><desc id="desc">A metallic blue and silver B monogram with oil derrick, flame and solar panel details.</desc>
+<defs>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#aeb8c3"/><stop offset=".72" stop-color="#f5f7fa"/><stop offset="1" stop-color="#7e8995"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#68e8ff"/><stop offset=".38" stop-color="#078fc7"/><stop offset=".7" stop-color="#004f91"/><stop offset="1" stop-color="#42c8f1"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"/></filter>
+</defs>
+<g opacity=".25" filter="url(#shadow)" transform="translate(0 12)"><path d="M225 90H490C625 90 680 165 680 250C680 310 645 350 600 375C690 400 740 465 740 555C740 680 650 745 510 745H225V315L420 500H515C570 500 600 470 600 425C600 380 570 350 515 350H300Z" fill="#000"/></g>
+<path d="M225 90H490C625 90 680 165 680 250C680 310 645 350 600 375C690 400 740 465 740 555C740 680 650 745 510 745H225V315L420 500H515C570 500 600 470 600 425C600 380 570 350 515 350H300Z" fill="url(#silver)" stroke="#dce4ed" stroke-width="8"/>
+<path d="M225 315L420 500H515C570 500 600 470 600 425C600 380 570 350 515 350H300Z" fill="#101b28"/>
+<path d="M225 315L420 500H515L375 500L225 665Z" fill="url(#blue)" stroke="#56dfff" stroke-width="7"/>
+<path d="M225 315L420 500H515L375 500L225 665Z" fill="url(#blue)" opacity=".65"/>
+<g stroke="url(#silver)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(250 420) scale(.72)">
+ <path d="M0 235L48 0L96 235M18 150H78M27 105H69M36 60H60M48 0V-20M48-20L28-2M48-20L68-2M0 235H96M10 190L85 95M85 190L10 95"/>
+</g>
+<path d="M360 615C330 575 365 548 380 515C385 545 420 560 405 600C398 620 375 630 360 615Z" fill="url(#silver)" stroke="#dbe4ed" stroke-width="5"/>
+<g transform="translate(515 400) rotate(-8)">
+ <rect x="0" y="0" width="155" height="105" rx="6" fill="#111c2a" stroke="url(#silver)" stroke-width="9"/>
+ <g stroke="#d8e3ed" stroke-width="5"><path d="M38 5V100M77 5V100M116 5V100M5 35H150M5 70H150"/></g>
+ <path d="M78 105V160M40 160H116" stroke="url(#silver)" stroke-width="10" fill="none"/>
+</g>
+<text x="450" y="835" text-anchor="middle" fill="url(#silver)" font-family="Georgia,serif" font-size="92" letter-spacing="13">BURGH</text>
+<text x="450" y="900" text-anchor="middle" fill="url(#silver)" font-family="Arial,sans-serif" font-size="43" letter-spacing="19">ENERGIES</text>
+</svg>
