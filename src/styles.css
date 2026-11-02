@@ -126,3 +126,9 @@ textarea:disabled {
 }
 .button-outline-light { display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.62); background:rgba(255,255,255,.06); color:#fff; padding:15px 22px; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; transition:background .2s,border-color .2s; }
 .button-outline-light:hover { background:rgba(255,255,255,.14); border-color:#fff; }
+
+
+/* BURGH Energies identity treatment */
+.energy-brand-logo { position:absolute; z-index:2; top:118px; right:max(6vw, calc((100vw - 1240px)/2)); width:clamp(145px, 19vw, 260px); max-height:310px; object-fit:contain; filter:drop-shadow(0 16px 30px rgba(0,0,0,.35)); }
+.energy-hero .division-hero-content { z-index:3; }
+@media (max-width:680px) { .energy-brand-logo { top:98px; right:20px; width:118px; max-height:150px; opacity:.94; } .energy-hero .division-hero-content { padding-top:180px; } }
