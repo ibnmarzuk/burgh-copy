@@ -53,10 +53,15 @@ function navigate(path) {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-function Logo() {
+function Logo({ variant = 'header' }) {
+  const isFooter = variant === 'footer'
   return (
-    <button className="logo" onClick={() => navigate('/')} aria-label="BURGH home">
-      <img className="logo-image" src={`${ASSET_BASE}burgh-logo.svg`} alt="BURGH" />
+    <button className={`logo ${isFooter ? 'footer-logo' : ''}`} onClick={() => navigate('/')} aria-label="BURGH home">
+      <img
+        className={isFooter ? 'footer-logo-image' : 'logo-image'}
+        src={isFooter ? `${ASSET_BASE}burgh-logo.svg` : `${ASSET_BASE}assets/burgh-homes-logo.svg`}
+        alt={isFooter ? 'BURGH' : 'BURGH Homes'}
+      />
     </button>
   )
 }
@@ -87,7 +92,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Logo />
+          <Logo variant="footer" />
           <p>Real estate. Energy. Building value for the future.</p>
         </div>
         <div className="footer-links">
