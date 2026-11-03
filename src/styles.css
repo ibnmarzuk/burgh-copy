@@ -144,3 +144,6 @@ textarea:disabled {
  .division-hero-actions { margin-top:18px; }
  .division-hero-actions .button { padding:12px 14px; font-size:.62rem; }
 }
+
+/* Rounded pill CTAs for the main homepage hero */
+.hero-actions > .button { border-radius: 999px; padding-inline: 26px; }
