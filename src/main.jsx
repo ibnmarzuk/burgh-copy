@@ -100,7 +100,7 @@ function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} BURGH. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} BURGH HOMES. All rights reserved.</span>
         <span>Homes <i></i> Living <i></i> Future</span>
       </div>
     </footer>
