@@ -136,35 +136,113 @@ function Values() {
 }
 
 function Home() {
+  const focusCards = [
+    {
+      number: '01',
+      title: 'Affordable housing',
+      copy: 'Thoughtful homeownership opportunities designed around practical needs and budgets.',
+      image: 'assets/shop1.jpg',
+      alt: 'Residential property representing affordable homeownership'
+    },
+    {
+      number: '02',
+      title: 'Luxury residential development',
+      copy: 'Premium homes that bring together modern design, comfort and lasting value.',
+      image: "assets/shop 2'.jpg",
+      alt: 'Modern luxury residential property'
+    },
+    {
+      number: '03',
+      title: 'Residential property sales',
+      copy: 'Property options and guidance for individuals, families and real estate investors.',
+      image: 'assets/shop 3.jpg',
+      alt: 'Residential property available for homeowners and investors'
+    }
+  ]
+
+  const focusItems = [
+    ['01', 'Affordable homes', 'More accessible homeownership opportunities.'],
+    ['02', 'Luxury residences', 'Comfort, thoughtful design and quality living.'],
+    ['03', 'Property sales', 'Residential options for buyers and investors.'],
+    ['04', 'Investment opportunities', 'Property decisions with long-term value in mind.']
+  ]
+
   return <>
-    <section className="hero">
+    <section className="hero homes-home-hero">
       <div className="hero-image"></div>
       <div className="hero-overlay"></div>
       <div className="container hero-content">
-        <span className="eyebrow hero-eyebrow">RESIDENTIAL REAL ESTATE. THOUGHTFULLY DELIVERED.</span>
-        <h1>A better place<br /><span>to call home.</span><br />A future to build.</h1>
-        <p>Discover thoughtfully planned homes, quality residential developments and property opportunities shaped around the way you want to live.</p>
+        <span className="eyebrow hero-eyebrow">BURGH HOMES / RESIDENTIAL REAL ESTATE</span>
+        <h1>Find your place.<br /><span>Build your future.</span></h1>
+        <p>From accessible homeownership to premium residential living, BURGH HOMES creates property opportunities shaped around the way people want to live.</p>
         <div className="hero-actions">
-          <button className="button button-gold" onClick={() => navigate('/homes')}>Explore BURGH HOMES <Arrow light /></button>
-          <button className="button button-outline-light" onClick={() => navigate('/contact?division=homes')}>Make an enquiry <Arrow light /></button>
-          <button className="scroll-cue" onClick={() => document.getElementById('homes-intro')?.scrollIntoView({ behavior: 'smooth' })}><span className="scroll-line"></span>Scroll to explore</button>
+          <button className="button button-gold" onClick={() => navigate('/homes')}>Explore our homes <Arrow light /></button>
+          <button className="button button-outline-light" onClick={() => navigate('/contact?division=homes')}>Talk to our team <Arrow light /></button>
         </div>
       </div>
-      <div className="hero-stamp"><span>01</span><span>BURGH HOMES<br />Quality living<br />Lasting value</span></div>
+      <div className="hero-stamp"><span>01</span><span>BURGH HOMES<br />Thoughtful living<br />Lasting value</span></div>
     </section>
-    <section id="homes-intro" className="intro-section section-pad">
-      <div className="container intro-grid">
-        <div><span className="eyebrow">A better place to call home</span><h2>More than a property.<br /><em>A place to build a future.</em></h2></div>
-        <div>
-          <p className="lead">BURGH HOMES is a residential real estate development and housing company focused on affordable and luxury homes for individuals, families, professionals and investors.</p>
-          <p>From accessible homeownership opportunities to premium residential developments, we bring together thoughtful planning, modern design, comfort and long-term value.</p>
-          <button className="text-link" onClick={() => navigate('/about')}>Discover BURGH HOMES <Arrow /></button>
+
+    <section className="home-services-strip" aria-label="BURGH HOMES property focus">
+      <div className="container home-services-grid">
+        {focusItems.map(([number, title, copy]) => (
+          <button className="home-service-item" key={number} onClick={() => navigate('/homes')}>
+            <span className="home-service-number">{number}</span>
+            <span className="home-service-title">{title}</span>
+            <span className="home-service-copy">{copy}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <section className="section-pad home-about-section">
+      <div className="container home-about-grid">
+        <div className="home-about-visual">
+          <img src={`${ASSET_BASE}assets/shop1.jpg`} alt="Residential architecture and property development" />
+          <span className="home-image-caption">BURGH HOMES / OUR APPROACH</span>
+        </div>
+        <div className="home-about-copy">
+          <span className="eyebrow">ABOUT BURGH HOMES</span>
+          <h2>Built around better living and <em>lasting value.</em></h2>
+          <p className="lead">A home is more than a building. It is where life happens, families grow and futures take shape.</p>
+          <p>BURGH HOMES is focused on affordable housing, luxury residential development and property sales. We bring together thoughtful planning, modern design and a customer-focused approach to help people make confident property decisions.</p>
+          <button className="text-link" onClick={() => navigate('/about')}>Learn more about us <Arrow /></button>
         </div>
       </div>
     </section>
+
+    <section className="home-focus-section">
+      <div className="container">
+        <div className="section-heading split-heading">
+          <div><span className="eyebrow">WHAT WE FOCUS ON</span><h2>Property options for<br /><em>different ambitions.</em></h2></div>
+          <p>Whether you are taking your first step towards homeownership or exploring a premium residence, discover the areas where BURGH HOMES can help.</p>
+        </div>
+        <div className="home-focus-grid">
+          {focusCards.map(card => (
+            <article className="home-focus-card" key={card.number}>
+              <div className="home-focus-image">
+                <img src={`${ASSET_BASE}${card.image}`} alt={card.alt} loading="lazy" />
+                <span>{card.number}</span>
+              </div>
+              <div className="home-focus-copy">
+                <h3>{card.title}</h3>
+                <p>{card.copy}</p>
+                <button className="text-link" onClick={() => navigate('/homes')}>Explore this area <Arrow /></button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <Values />
+
     <section className="cta-band homes-cta">
-      <div className="container cta-inner"><span className="eyebrow">Your next chapter starts here</span><h2>Find a place to<br /><em>build your future.</em></h2><button className="button button-light" onClick={() => navigate('/contact?division=homes')}>Enquire about a property <Arrow /></button></div>
+      <div className="container cta-inner">
+        <span className="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+        <h2>Let’s find a place<br /><em>to call yours.</em></h2>
+        <button className="button button-light" onClick={() => navigate('/contact?division=homes')}>Make a property enquiry <Arrow /></button>
+      </div>
     </section>
   </>
 }
