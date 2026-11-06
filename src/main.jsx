@@ -124,8 +124,8 @@ function Values() {
     <section className="values-section section-pad">
       <div className="container">
         <div className="section-heading split-heading">
-          <div><span className="eyebrow">The BURGH standard</span><h2>Built on principles<br />that <em>hold.</em></h2></div>
-          <p>We are shaping a business that earns trust over time, through the quality of what we do and the way we do it.</p>
+          <div><span className="eyebrow">The BURGH HOMES standard</span><h2>Built on principles<br />that <em>last.</em></h2></div>
+          <p>Quality, integrity and customer care guide the way we approach every home and every property conversation.</p>
         </div>
         <div className="values-grid">
           {values.map(([num, title, copy]) => <div className="value-item" key={title}><span className="value-number">{num}</span><h3>{title}</h3><p>{copy}</p></div>)}
