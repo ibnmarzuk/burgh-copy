@@ -9,9 +9,12 @@ const ASSET_BASE = import.meta.env.BASE_URL
 
 const navItems = [
   { path: '/', label: 'Home' },
-  { path: '/about', label: 'About BURGH HOMES' },
+  { path: '/about', label: 'About' },
+  { path: '/services', label: 'Services' },
+  { path: '/projects', label: 'Projects' },
   { path: '/homes', label: 'Properties' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/gallery', label: 'Gallery' },
+  { path: '/contact', label: 'Contact Us' },
 ]
 
 const values = [
@@ -292,6 +295,52 @@ function Homes() {
   </>
 }
 
+
+function Services() {
+  return <>
+    <PageIntro eyebrow="BURGH HOMES / SERVICES" title={<>Property solutions<br /><em>built around you.</em></>} description="Explore the residential property services and opportunities that BURGH HOMES is focused on delivering." />
+    <section className="section-pad new-content-section">
+      <div className="container">
+        <div className="section-heading split-heading"><div><span className="eyebrow">What we do</span><h2>From first homes to<br /><em>lasting investments.</em></h2></div><p>Our work centres on residential property, with an approach shaped by quality, thoughtful planning and the needs of homeowners and investors.</p></div>
+        <div className="service-page-grid">
+          {/* intentionally empty */}
+          {homesAreas.map(([num, title, copy, bullets]) => <article className="service-page-card" key={num}><span className="eyebrow">SERVICE / {num}</span><h3>{title}</h3><p>{copy}</p><ul>{bullets.slice(0,4).map(item => <li key={item}>{item}</li>)}</ul><button className="text-link" onClick={() => navigate('/contact?division=homes')}>Discuss your requirements <Arrow /></button></article>)}
+        </div>
+      </div>
+    </section>
+    <section className="cta-band homes-cta"><div className="container cta-inner"><span className="eyebrow">BURGH HOMES</span><h2>Tell us what<br /><em>you are looking for.</em></h2><button className="button button-light" onClick={() => navigate('/contact?division=homes')}>Make an enquiry <Arrow /></button></div></section>
+  </>
+}
+
+function Projects() {
+  return <>
+    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places taking shape.<br /><em>Possibilities ahead.</em></>} description="Explore BURGH HOMES developments and project updates. This page is structured to grow as new projects are announced." />
+    <section className="section-pad new-content-section">
+      <div className="container">
+        <div className="section-heading split-heading"><div><span className="eyebrow">Our portfolio</span><h2>Projects by<br /><em>BURGH HOMES.</em></h2></div><p>We will publish project information here as details are confirmed, including location, development highlights, images and availability.</p></div>
+        <div className="projects-empty"><span className="eyebrow">PROJECT PORTFOLIO</span><h3>New project updates are on the way.</h3><p>There are no project listings published here yet. Contact our team for current property information and upcoming development enquiries.</p><button className="button button-navy" onClick={() => navigate('/contact?division=homes')}>Ask about our projects <Arrow light /></button></div>
+      </div>
+    </section>
+  </>
+}
+
+function Gallery() {
+  const images = [
+    { src: 'assets/shop1.jpg', alt: 'Residential property image', title: 'Residential living' },
+    { src: "assets/shop 2'.jpg", alt: 'Modern residential property image', title: 'Modern residences' },
+    { src: 'assets/shop 3.jpg', alt: 'Property development image', title: 'Property opportunities' },
+  ]
+  return <>
+    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection of residential property imagery and the spaces that inspire our work." />
+    <section className="section-pad new-content-section">
+      <div className="container">
+        <div className="section-heading split-heading"><div><span className="eyebrow">Visual collection</span><h2>Spaces and<br /><em>inspiration.</em></h2></div><p>Explore selected property imagery. Project-specific galleries will be added as developments are published.</p></div>
+        <div className="burgh-gallery-grid">{images.map((item, index) => <figure key={item.src}><img src={`${ASSET_BASE}${item.src}`} alt={item.alt} loading="lazy" /><figcaption><span>0{index + 1}</span>{item.title}</figcaption></figure>)}</div>
+      </div>
+    </section>
+  </>
+}
+
 function Contact() {
   const [sent, setSent] = useState(false)
   const requestedDivision = new URLSearchParams(window.location.search).get('division')
@@ -357,11 +406,14 @@ function App() {
       '/': 'BURGH HOMES | A better place to call home.',
       '/about': 'About BURGH HOMES | Thoughtfully planned. Made for living.',
       '/homes': 'BURGH HOMES | Residential properties and homes.',
+      '/services': 'Services | BURGH HOMES residential property solutions.',
+      '/projects': 'Projects | BURGH HOMES developments.',
+      '/gallery': 'Gallery | BURGH HOMES property imagery.',
       '/contact': 'Contact BURGH HOMES | Let’s start a conversation.'
     }
     document.title = titles[path] || titles['/']
   }, [path])
-  const page = path === '/about' ? <About /> : path === '/homes' ? <Homes /> : path === '/contact' ? <Contact /> : <Home />
+  const page = path === '/about' ? <About /> : path === '/services' ? <Services /> : path === '/projects' ? <Projects /> : path === '/gallery' ? <Gallery /> : path === '/homes' ? <Homes /> : path === '/contact' ? <Contact /> : <Home />
   return <><Header /><main>{page}</main><Footer /></>
 }
 
