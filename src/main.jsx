@@ -32,7 +32,7 @@ const projectPortfolio = [
     id: 'ocean-breeze-estate', number: '01', title: 'Ocean Breeze Estate', type: '3-Bedroom Semi-Detached Duplex',
     description: 'A contemporary multi-level residence featuring light and grey wall finishes, dark-framed glazing, glazed balcony elements and interlocking-paved external areas.',
     image: 'assets/ocean-breeze/ocean-001.jpg', alt: 'Ocean Breeze Estate 3-bedroom semi-detached duplex exterior',
-    gallery: ['assets/ocean-breeze/ocean-001.jpg', 'assets/ocean-breeze/ocean-002.jpg'], videos: [], hasDetails: true
+    gallery: ['assets/ocean-breeze/ocean-001.jpg', 'assets/ocean-breeze/ocean-002.jpg'], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Ocean Breeze Estate project video' }], hasDetails: true
   },
   {
     id: 'project-02', number: '02', title: 'Project 02', description: 'Project details, photos and videos will be added here.',
@@ -352,7 +352,7 @@ function Projects() {
             <div className="project-portfolio-heading"><span className="project-portfolio-number">{project.number}</span><div><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><p>{project.description}</p></div></div>
             <div className="project-media-grid">
               <div className="project-media-block"><span className="eyebrow">Photos</span>{project.gallery.length ? <div className="project-photo-grid">{project.gallery.map((src, index) => <img key={src} src={`${ASSET_BASE}${src}`} alt={`${project.title} exterior view ${index + 1}`} loading="lazy" />)}</div> : <div className="project-media-empty">Photos for this project will be added here.</div>}</div>
-              <div className="project-media-block"><span className="eyebrow">Videos</span>{project.videos.length ? <div className="project-video-list">{project.videos.map(video => <video key={video.src} controls preload="metadata" src={`${ASSET_BASE}${video.src}`} />)}</div> : <div className="project-media-empty">Video updates for this project will be added here.</div>}</div>
+              <div className="project-media-block"><span className="eyebrow">Videos</span>{project.videos.length ? <div className="project-video-list">{project.videos.map(video => <figure className="project-video-item" key={video.src}><video controls preload="metadata" poster={`${ASSET_BASE}${project.gallery[0]}`} src={`${ASSET_BASE}${video.src}`} /><figcaption>{video.title}</figcaption></figure>)}</div> : <div className="project-media-empty">Video updates for this project will be added here.</div>}</div>
             </div>
           </article>)}
         </div>
