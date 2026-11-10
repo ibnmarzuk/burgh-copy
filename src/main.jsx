@@ -162,22 +162,22 @@ function Home() {
       number: '01',
       title: 'Affordable housing',
       copy: 'Thoughtful homeownership opportunities designed around practical needs and budgets.',
-      image: 'assets/shop1.jpg',
-      alt: 'Residential property representing affordable homeownership'
+      image: 'assets/gallery/IMG_20261110_143136_220.jpg',
+      alt: 'Completed residence representing affordable homeownership'
     },
     {
       number: '02',
       title: 'Luxury residential development',
       copy: 'Premium homes that bring together modern design, comfort and lasting value.',
-      image: "assets/shop 2'.jpg",
-      alt: 'Modern luxury residential property'
+      image: 'assets/gallery/Screenshot_2026-11-10-14-30-47-267_org.telegram.messenger-edit.jpg',
+      alt: 'Completed modern luxury residential property'
     },
     {
       number: '03',
       title: 'Residential property sales',
       copy: 'Property options and guidance for individuals, families and real estate investors.',
-      image: 'assets/shop 3.jpg',
-      alt: 'Residential property available for homeowners and investors'
+      image: 'assets/gallery/IMG_20261110_143136_363.jpg',
+      alt: 'Completed residential property available for homeowners and investors'
     }
   ]
 
@@ -219,7 +219,7 @@ function Home() {
     <section className="section-pad home-about-section">
       <div className="container home-about-grid">
         <div className="home-about-visual">
-          <img src={`${ASSET_BASE}assets/shop1.jpg`} alt="Residential architecture and property development" />
+          <img src={`${ASSET_BASE}assets/gallery/IMG_20261110_143136_606.jpg`} alt="Completed residential interior representing better living" />
           <span className="home-image-caption">BURGH HOMES / OUR APPROACH</span>
         </div>
         <div className="home-about-copy">
