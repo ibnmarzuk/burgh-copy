@@ -314,11 +314,20 @@ function Services() {
 
 function Projects() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places taking shape.<br /><em>Possibilities ahead.</em></>} description="Explore BURGH HOMES developments and project updates. This page is structured to grow as new projects are announced." />
+    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places taking shape.<br /><em>Possibilities ahead.</em></>} description="Follow the progress of BURGH HOMES developments and explore the places we are bringing to life." />
     <section className="section-pad new-content-section">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Our portfolio</span><h2>Projects by<br /><em>BURGH HOMES.</em></h2></div><p>We will publish project information here as details are confirmed, including location, development highlights, images and availability.</p></div>
-        <div className="projects-empty"><span className="eyebrow">PROJECT PORTFOLIO</span><h3>New project updates are on the way.</h3><p>There are no project listings published here yet. Contact our team for current property information and upcoming development enquiries.</p><button className="button button-navy" onClick={() => navigate('/contact?division=homes')}>Ask about our projects <Arrow light /></button></div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Current development</span><h2>Building for<br /><em>what comes next.</em></h2></div><p>Explore our ongoing development. Project updates and additional developments will be added here as work progresses.</p></div>
+        <article className="burgh-project-feature">
+          <div className="burgh-project-image"><img src={`${ASSET_BASE}assets/burgh-homes.jpg`} alt="BURGH HOMES residential building currently under construction" /></div>
+          <div className="burgh-project-copy">
+            <span className="project-status">ONGOING PROJECT</span>
+            <span className="eyebrow">BURGH HOMES DEVELOPMENT</span>
+            <h3>A development in progress.</h3>
+            <p>Our current residential development is taking shape. Check back for construction updates and further project details.</p>
+            <button className="button button-navy" onClick={() => navigate('/contact?division=homes')}>Enquire about this project <Arrow light /></button>
+          </div>
+        </article>
       </div>
     </section>
   </>
