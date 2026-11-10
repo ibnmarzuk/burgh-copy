@@ -252,7 +252,7 @@ textarea:disabled {
 
 
 /* Completed portfolio and supplied gallery media */
-.completed-projects-section { background: var(--paper); }
+.featured-projects-section { background: var(--paper); }
 .project-card-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px; }
 .project-card { background:white; border:1px solid var(--line); }
 .project-card-image { height:360px; position:relative; overflow:hidden; background:var(--cream); }

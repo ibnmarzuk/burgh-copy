@@ -29,16 +29,10 @@ const values = [
 // Add future featured developments here; the homepage and Projects page render from this collection.
 const featuredProjects = [
   {
-    id: 'burgh-residence-01', number: '01', title: 'BURGH Residence 01', location: 'Lagos, Nigeria', type: 'Residential development',
-    description: 'A contemporary residence shaped around natural light, privacy and everyday comfort.',
-    image: 'assets/gallery/IMG_20261110_143136_220.jpg', alt: 'BURGH residence with a lit entrance at night',
-    gallery: ['assets/gallery/IMG_20261110_143136_220.jpg', 'assets/gallery/IMG_20261110_143136_363.jpg', 'assets/gallery/IMG_20261110_143136_606.jpg']
-  },
-  {
-    id: 'burgh-residence-02', number: '02', title: 'BURGH Residence 02', location: 'Lagos, Nigeria', type: 'Residential development',
-    description: 'A modern family home combining clean architectural lines with considered interior finishes.',
-    image: 'assets/gallery/Screenshot_2026-11-10-14-30-47-267_org.telegram.messenger-edit.jpg', alt: 'Modern multi-storey BURGH residence',
-    gallery: ['assets/gallery/Screenshot_2026-11-10-14-30-47-267_org.telegram.messenger-edit.jpg', 'assets/gallery/IMG_20261110_143136_296.jpg', 'assets/gallery/IMG_20261110_143136_350.jpg', 'assets/gallery/IMG_20261110_143136_297.jpg']
+    id: 'ocean-breeze-estate', number: '01', title: 'Ocean Breeze Estate', type: '3-Bedroom Semi-Detached Duplex',
+    description: 'A contemporary multi-level residence featuring light and grey wall finishes, dark-framed glazing, glazed balcony elements and interlocking-paved external areas.',
+    image: 'assets/ocean-breeze/ocean-001.jpg', alt: 'Ocean Breeze Estate 3-bedroom semi-detached duplex exterior',
+    gallery: ['assets/ocean-breeze/ocean-001.jpg', 'assets/ocean-breeze/ocean-002.jpg']
   }
 ]
 
@@ -256,9 +250,9 @@ function Home() {
       </div>
     </section>
 
-    <section className="completed-projects-section section-pad">
+    <section className="featured-projects-section section-pad">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Featured projects</span><h2>Places shaped for<br /><em>better living.</em></h2></div><p>Explore selected BURGH residences. New projects can be added to the same flexible collection as the portfolio grows.</p></div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Featured projects</span><h2>Places shaped for<br /><em>better living.</em></h2></div><p>Explore Ocean Breeze Estate, a 3-bedroom semi-detached duplex presented through its exterior architectural photography.</p></div>
         <div className="project-card-grid">{featuredProjects.map(project => <article className="project-card" key={project.id}><div className="project-card-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /><span>{project.number}</span></div><div className="project-card-copy"><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><button className="text-link" onClick={() => navigate('/projects')}>View project details <Arrow /></button></div></article>)}</div>
       </div>
     </section>
@@ -339,7 +333,7 @@ function Services() {
 
 function Projects() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places made real.<br /><em>Possibilities ahead.</em></>} description="Explore selected BURGH HOMES residences and the quality of living they are designed to support." />
+    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places made real.<br /><em>Possibilities ahead.</em></>} description="Explore Ocean Breeze Estate and the quality of living it is designed to support." />
     <section className="section-pad new-content-section">
       <div className="container">
         <div className="section-heading split-heading"><div><span className="eyebrow">Featured portfolio</span><h2>Built for<br /><em>better living.</em></h2></div><p>Each card is rendered from the shared project collection, so new developments can be added without changing the layout.</p></div>
