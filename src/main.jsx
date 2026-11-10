@@ -26,6 +26,24 @@ const values = [
   ['06', 'Excellence', 'We keep raising the bar in service and execution.'],
 ]
 
+// Add future completed developments here; the homepage and Projects page render from this collection.
+const completedProjects = [
+  {
+    id: 'burgh-residence-01', number: '01', title: 'BURGH Residence 01', location: 'Lagos, Nigeria', type: 'Completed residence',
+    description: 'A finished contemporary residence shaped around natural light, privacy and everyday comfort.',
+    image: 'assets/gallery/IMG_20261110_143136_220.jpg', alt: 'Completed BURGH residence with a lit entrance at night',
+    gallery: ['assets/gallery/IMG_20261110_143136_220.jpg', 'assets/gallery/IMG_20261110_143136_363.jpg', 'assets/gallery/IMG_20261110_143136_606.jpg']
+  },
+  {
+    id: 'burgh-residence-02', number: '02', title: 'BURGH Residence 02', location: 'Lagos, Nigeria', type: 'Completed residence',
+    description: 'A modern family home combining clean architectural lines with considered interior finishes.',
+    image: 'assets/gallery/Screenshot_2026-11-10-14-30-47-267_org.telegram.messenger-edit.jpg', alt: 'Completed modern multi-storey BURGH residence',
+    gallery: ['assets/gallery/Screenshot_2026-11-10-14-30-47-267_org.telegram.messenger-edit.jpg', 'assets/gallery/IMG_20261110_143136_296.jpg', 'assets/gallery/IMG_20261110_143136_350.jpg', 'assets/gallery/IMG_20261110_143136_297.jpg']
+  }
+]
+
+const galleryImages = completedProjects.flatMap(project => project.gallery.map((src, index) => ({ src, alt: `${project.title} — completed residential project image ${index + 1}`, title: project.title, projectId: project.id })))
+
 const Arrow = ({ light = false }) => <span className={`arrow ${light ? 'arrow-light' : ''}`} aria-hidden="true">↗</span>
 
 function ContactIcon({ type }) {
@@ -238,6 +256,13 @@ function Home() {
       </div>
     </section>
 
+    <section className="completed-projects-section section-pad">
+      <div className="container">
+        <div className="section-heading split-heading"><div><span className="eyebrow">Completed projects</span><h2>Places already<br /><em>made real.</em></h2></div><p>Explore completed BURGH residences. Ongoing developments are intentionally kept off the homepage until they are ready to present.</p></div>
+        <div className="project-card-grid">{completedProjects.map(project => <article className="project-card" key={project.id}><div className="project-card-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /><span>{project.number}</span></div><div className="project-card-copy"><span className="project-status">COMPLETED PROJECT</span><h3>{project.title}</h3><p>{project.location} <i></i> {project.type}</p><button className="text-link" onClick={() => navigate('/projects')}>View completed projects <Arrow /></button></div></article>)}</div>
+      </div>
+    </section>
+
     <Values />
 
     <section className="cta-band homes-cta">
@@ -314,42 +339,31 @@ function Services() {
 
 function Projects() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places taking shape.<br /><em>Possibilities ahead.</em></>} description="Follow the progress of BURGH HOMES developments and explore the places we are bringing to life." />
+    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places made real.<br /><em>Possibilities ahead.</em></>} description="Explore completed BURGH HOMES residences and the quality of living they are designed to support." />
     <section className="section-pad new-content-section">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Current development</span><h2>Building for<br /><em>what comes next.</em></h2></div><p>Explore our ongoing development. Project updates and additional developments will be added here as work progresses.</p></div>
-        <article className="burgh-project-feature">
-          <div className="burgh-project-image"><img src={`${ASSET_BASE}assets/burgh-homes.jpg`} alt="BURGH HOMES residential building currently under construction" /></div>
-          <div className="burgh-project-copy">
-            <span className="project-status">ONGOING PROJECT</span>
-            <span className="eyebrow">BURGH HOMES DEVELOPMENT</span>
-            <h3>A development in progress.</h3>
-            <p>Our current residential development is taking shape. Check back for construction updates and further project details.</p>
-            <button className="button button-navy" onClick={() => navigate('/contact?division=homes')}>Enquire about this project <Arrow light /></button>
-          </div>
-        </article>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Completed portfolio</span><h2>Built for<br /><em>better living.</em></h2></div><p>Each card is rendered from the shared project collection, so new completed developments can be added without changing the layout.</p></div>
+        <div className="project-list">
+          {completedProjects.map(project => <article className="burgh-project-feature" key={project.id}>
+            <div className="burgh-project-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /></div>
+            <div className="burgh-project-copy"><span className="project-status">COMPLETED PROJECT</span><span className="eyebrow">{project.location} / {project.type}</span><h3>{project.title}</h3><p>{project.description}</p><button className="button button-navy" onClick={() => navigate('/gallery')}>View project gallery <Arrow light /></button></div>
+          </article>)}
+        </div>
       </div>
     </section>
   </>
 }
-
 function Gallery() {
-  const images = [
-    { src: 'assets/shop1.jpg', alt: 'Residential property image', title: 'Residential living' },
-    { src: "assets/shop 2'.jpg", alt: 'Modern residential property image', title: 'Modern residences' },
-    { src: 'assets/shop 3.jpg', alt: 'Property development image', title: 'Property opportunities' },
-  ]
   return <>
-    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection of residential property imagery and the spaces that inspire our work." />
+    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection of completed BURGH residences, using the latest project photography supplied by BURGH HOMES." />
     <section className="section-pad new-content-section">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Visual collection</span><h2>Spaces and<br /><em>inspiration.</em></h2></div><p>Explore selected property imagery. Project-specific galleries will be added as developments are published.</p></div>
-        <div className="burgh-gallery-grid">{images.map((item, index) => <figure key={item.src}><img src={`${ASSET_BASE}${item.src}`} alt={item.alt} loading="lazy" /><figcaption><span>0{index + 1}</span>{item.title}</figcaption></figure>)}</div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Visual collection</span><h2>Spaces and<br /><em>inspiration.</em></h2></div><p>Browse the completed portfolio by project. Adding future photography is as simple as extending a project’s gallery array.</p></div>
+        <div className="burgh-gallery-grid">{galleryImages.map((item, index) => <figure key={`${item.projectId}-${item.src}`}><img src={`${ASSET_BASE}${item.src}`} alt={item.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, '0')}</span>{item.title}</figcaption></figure>)}</div>
       </div>
     </section>
   </>
 }
-
 function Contact() {
   const [sent, setSent] = useState(false)
   const requestedDivision = new URLSearchParams(window.location.search).get('division')
@@ -416,8 +430,8 @@ function App() {
       '/about': 'About BURGH HOMES | Thoughtfully planned. Made for living.',
       '/homes': 'BURGH HOMES | Residential properties and homes.',
       '/services': 'Services | BURGH HOMES residential property solutions.',
-      '/projects': 'Projects | BURGH HOMES developments.',
-      '/gallery': 'Gallery | BURGH HOMES property imagery.',
+      '/projects': 'Projects | BURGH HOMES completed residences.',
+      '/gallery': 'Gallery | BURGH HOMES completed projects.',
       '/contact': 'Contact BURGH HOMES | Let’s start a conversation.'
     }
     document.title = titles[path] || titles['/']
@@ -426,5 +440,4 @@ function App() {
   return <><Header /><main>{page}</main><Footer /></>
 }
 
-createRoot(document.getElementById('root')).render(<App />)
 createRoot(document.getElementById('root')).render(<App />)

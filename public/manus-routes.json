@@ -2,7 +2,10 @@
   "routes": [
     { "path": "/", "title": "BURGH HOMES — Home" },
     { "path": "/about", "title": "About BURGH HOMES" },
+    { "path": "/services", "title": "Services | BURGH HOMES" },
+    { "path": "/projects", "title": "Projects | BURGH HOMES" },
     { "path": "/homes", "title": "BURGH HOMES" },
+    { "path": "/gallery", "title": "Gallery | BURGH HOMES" },
     { "path": "/contact", "title": "Contact BURGH HOMES" }
   ]
 }

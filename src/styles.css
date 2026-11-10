@@ -249,3 +249,35 @@ textarea:disabled {
 .burgh-project-copy h3 { margin:12px 0; font:700 clamp(1.7rem,3vw,2.5rem)/1.1 Manrope,sans-serif; color:var(--ink); }
 .burgh-project-copy p { color:var(--muted); line-height:1.75; margin:0 0 25px; }
 @media(max-width:760px) { .burgh-project-feature { grid-template-columns:1fr; } .burgh-project-image,.burgh-project-image img { min-height:280px; } }
+
+
+/* Completed portfolio and supplied gallery media */
+.completed-projects-section { background: var(--paper); }
+.project-card-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px; }
+.project-card { background:white; border:1px solid var(--line); }
+.project-card-image { height:360px; position:relative; overflow:hidden; background:var(--cream); }
+.project-card-image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+.project-card:hover .project-card-image img { transform:scale(1.04); }
+.project-card-image > span { position:absolute; left:20px; bottom:18px; color:white; font:700 1rem/1 'Manrope'; letter-spacing:.08em; text-shadow:0 1px 9px rgba(0,0,0,.45); }
+.project-card-copy { padding:28px 30px 30px; }
+.project-card-copy h3 { margin:13px 0 9px; font-size:1.55rem; }
+.project-card-copy p { font-size:.82rem; }
+.project-card-copy p i { display:inline-block; width:4px; height:4px; margin:0 8px 2px; border-radius:50%; background:var(--gold); }
+.project-status { display:block; color:var(--green); font-size:.62rem; font-weight:700; letter-spacing:.14em; }
+.project-list { display:grid; gap:28px; }
+.burgh-project-feature { display:grid; grid-template-columns:minmax(0, 1.12fr) minmax(280px, .88fr); background:var(--cream); }
+.burgh-project-image { min-height:390px; background:var(--navy); overflow:hidden; }
+.burgh-project-image img { width:100%; height:100%; min-height:390px; object-fit:cover; display:block; }
+.burgh-project-copy { padding:52px 52px 48px; align-self:center; }
+.burgh-project-copy .eyebrow { margin-top:17px; }
+.burgh-project-copy h3 { margin:18px 0 16px; font-size:clamp(2rem, 3vw, 3.1rem); }
+.burgh-project-copy p { max-width:400px; }
+.burgh-gallery-grid { display:grid; grid-template-columns:repeat(12, 1fr); gap:18px; }
+.burgh-gallery-grid figure { grid-column:span 4; margin:0; background:var(--cream); }
+.burgh-gallery-grid figure:nth-child(4n+1), .burgh-gallery-grid figure:nth-child(4n+2) { grid-column:span 6; }
+.burgh-gallery-grid img { width:100%; height:320px; display:block; object-fit:cover; }
+.burgh-gallery-grid figure:nth-child(4n+1) img, .burgh-gallery-grid figure:nth-child(4n+2) img { height:390px; }
+.burgh-gallery-grid figcaption { display:flex; align-items:center; gap:14px; padding:14px 16px 17px; color:var(--ink); font:700 .74rem/1.2 'Manrope'; letter-spacing:.03em; }
+.burgh-gallery-grid figcaption span { color:var(--gold); font-size:.68rem; }
+@media (max-width:900px) { .burgh-project-feature { grid-template-columns:1fr 1fr; } .burgh-project-copy { padding:34px 28px; } .burgh-project-image, .burgh-project-image img { min-height:330px; } }
+@media (max-width:680px) { .project-card-grid { grid-template-columns:1fr; } .project-card-image { height:300px; } .burgh-project-feature { grid-template-columns:1fr; } .burgh-project-image, .burgh-project-image img { min-height:280px; } .burgh-project-copy { padding:30px 24px 34px; } .burgh-gallery-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; } .burgh-gallery-grid figure, .burgh-gallery-grid figure:nth-child(4n+1), .burgh-gallery-grid figure:nth-child(4n+2) { grid-column:span 1; } .burgh-gallery-grid img, .burgh-gallery-grid figure:nth-child(4n+1) img, .burgh-gallery-grid figure:nth-child(4n+2) img { height:210px; } .burgh-gallery-grid figcaption { gap:8px; padding:11px 10px 13px; font-size:.61rem; } }
