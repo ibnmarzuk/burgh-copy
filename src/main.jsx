@@ -258,8 +258,8 @@ function Home() {
 
     <section className="completed-projects-section section-pad">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Featured projects</span><h2>Places shaped for<br /><em>better living.</em></h2></div><p>Explore selected BURGH residences in Lagos, Nigeria. New projects can be added to the same flexible collection as the portfolio grows.</p></div>
-        <div className="project-card-grid">{featuredProjects.map(project => <article className="project-card" key={project.id}><div className="project-card-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /><span>{project.number}</span></div><div className="project-card-copy"><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><p>{project.location} <i></i> {project.type}</p><button className="text-link" onClick={() => navigate('/projects')}>View project details <Arrow /></button></div></article>)}</div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Featured projects</span><h2>Places shaped for<br /><em>better living.</em></h2></div><p>Explore selected BURGH residences. New projects can be added to the same flexible collection as the portfolio grows.</p></div>
+        <div className="project-card-grid">{featuredProjects.map(project => <article className="project-card" key={project.id}><div className="project-card-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /><span>{project.number}</span></div><div className="project-card-copy"><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><button className="text-link" onClick={() => navigate('/projects')}>View project details <Arrow /></button></div></article>)}</div>
       </div>
     </section>
 
@@ -346,7 +346,7 @@ function Projects() {
         <div className="project-list">
           {featuredProjects.map(project => <article className="burgh-project-feature" key={project.id}>
             <div className="burgh-project-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /></div>
-            <div className="burgh-project-copy"><span className="project-status">FEATURED PROJECT</span><span className="eyebrow">{project.location} / {project.type}</span><h3>{project.title}</h3><p>{project.description}</p><button className="button button-navy" onClick={() => navigate('/gallery')}>View project gallery <Arrow light /></button></div>
+            <div className="burgh-project-copy"><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><p>{project.description}</p><button className="button button-navy" onClick={() => navigate('/gallery')}>View project gallery <Arrow light /></button></div>
           </article>)}
         </div>
       </div>
