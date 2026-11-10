@@ -27,16 +27,26 @@ const values = [
 ]
 
 // Add future featured developments here; the homepage and Projects page render from this collection.
-const featuredProjects = [
+const projectPortfolio = [
   {
     id: 'ocean-breeze-estate', number: '01', title: 'Ocean Breeze Estate', type: '3-Bedroom Semi-Detached Duplex',
     description: 'A contemporary multi-level residence featuring light and grey wall finishes, dark-framed glazing, glazed balcony elements and interlocking-paved external areas.',
     image: 'assets/ocean-breeze/ocean-001.jpg', alt: 'Ocean Breeze Estate 3-bedroom semi-detached duplex exterior',
-    gallery: ['assets/ocean-breeze/ocean-001.jpg', 'assets/ocean-breeze/ocean-002.jpg']
+    gallery: ['assets/ocean-breeze/ocean-001.jpg', 'assets/ocean-breeze/ocean-002.jpg'], videos: [], hasDetails: true
+  },
+  {
+    id: 'project-02', number: '02', title: 'Project 02', description: 'Project details, photos and videos will be added here.',
+    image: null, alt: '', gallery: [], videos: [], hasDetails: false
+  },
+  {
+    id: 'project-03', number: '03', title: 'Project 03', description: 'Project details, photos and videos will be added here.',
+    image: null, alt: '', gallery: [], videos: [], hasDetails: false
   }
 ]
 
-const galleryImages = featuredProjects.flatMap(project => project.gallery.map((src, index) => ({ src, alt: `${project.title} — residential project image ${index + 1}`, title: project.title, projectId: project.id })))
+const featuredProjects = projectPortfolio.filter(project => project.hasDetails)
+
+const galleryImages = projectPortfolio.flatMap(project => project.gallery.map((src, index) => ({ src, alt: `${project.title} — residential project image ${index + 1}`, title: project.title, projectId: project.id })))
 
 const Arrow = ({ light = false }) => <span className={`arrow ${light ? 'arrow-light' : ''}`} aria-hidden="true">↗</span>
 
@@ -333,14 +343,17 @@ function Services() {
 
 function Projects() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Places made real.<br /><em>Possibilities ahead.</em></>} description="Explore Ocean Breeze Estate and the quality of living it is designed to support." />
+    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Projects, one by one.<br /><em>See the work.</em></>} description="Browse the BURGH project portfolio. Each project has its own place for photos and videos, ready to grow as more media is supplied." />
     <section className="section-pad new-content-section">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Featured portfolio</span><h2>Built for<br /><em>better living.</em></h2></div><p>Each card is rendered from the shared project collection, so new developments can be added without changing the layout.</p></div>
-        <div className="project-list">
-          {featuredProjects.map(project => <article className="burgh-project-feature" key={project.id}>
-            <div className="burgh-project-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /></div>
-            <div className="burgh-project-copy"><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><p>{project.description}</p><button className="button button-navy" onClick={() => navigate('/gallery')}>View project gallery <Arrow light /></button></div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Project portfolio</span><h2>Every project.<br /><em>Its own story.</em></h2></div><p>Projects are numbered 01, 02 and 03. Add each project’s details, photos and videos to its own record without changing the page layout.</p></div>
+        <div className="project-portfolio-list">
+          {projectPortfolio.map(project => <article className={`project-portfolio-item ${project.hasDetails ? '' : 'is-pending'}`} key={project.id}>
+            <div className="project-portfolio-heading"><span className="project-portfolio-number">{project.number}</span><div><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><p>{project.description}</p></div></div>
+            <div className="project-media-grid">
+              <div className="project-media-block"><span className="eyebrow">Photos</span>{project.gallery.length ? <div className="project-photo-grid">{project.gallery.map((src, index) => <img key={src} src={`${ASSET_BASE}${src}`} alt={`${project.title} exterior view ${index + 1}`} loading="lazy" />)}</div> : <div className="project-media-empty">Photos for this project will be added here.</div>}</div>
+              <div className="project-media-block"><span className="eyebrow">Videos</span>{project.videos.length ? <div className="project-video-list">{project.videos.map(video => <video key={video.src} controls preload="metadata" src={`${ASSET_BASE}${video.src}`} />)}</div> : <div className="project-media-empty">Video updates for this project will be added here.</div>}</div>
+            </div>
           </article>)}
         </div>
       </div>

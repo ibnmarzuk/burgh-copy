@@ -291,3 +291,21 @@ textarea:disabled {
 .area-row-01 .area-visual { background-image: url('/assets/gallery/IMG_20261110_143136_220.jpg'); }
 .area-row-02 .area-visual { background-image: url('/assets/gallery/Screenshot_2026-11-10-14-30-47-267_org.telegram.messenger-edit.jpg'); }
 .area-row-03 .area-visual { background-image: url('/assets/gallery/IMG_20261110_143136_363.jpg'); }
+
+/* Numbered project portfolio with per-project photo and video media areas */
+.project-portfolio-list { display:grid; gap:28px; }
+.project-portfolio-item { background:var(--paper); border:1px solid var(--line); padding:clamp(26px,4vw,52px); }
+.project-portfolio-item.is-pending { background:var(--cream); }
+.project-portfolio-heading { display:grid; grid-template-columns:90px 1fr; gap:28px; align-items:start; padding-bottom:32px; border-bottom:1px solid var(--line); }
+.project-portfolio-number { color:var(--gold); font:700 2.1rem/1 'Manrope'; letter-spacing:-.04em; }
+.project-portfolio-heading h3 { margin:12px 0 10px; font-size:clamp(1.8rem,3vw,2.8rem); }
+.project-portfolio-heading p { max-width:650px; margin:0; }
+.project-media-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr); gap:32px; padding-top:30px; }
+.project-media-block > .eyebrow { margin-bottom:15px; }
+.project-photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.project-photo-grid img { width:100%; height:280px; object-fit:cover; display:block; background:var(--cream); }
+.project-video-list { display:grid; gap:12px; }
+.project-video-list video { display:block; width:100%; min-height:180px; background:var(--navy); }
+.project-media-empty { min-height:180px; display:flex; align-items:center; justify-content:center; padding:25px; border:1px dashed #c9cdd0; color:var(--muted); font-size:.78rem; text-align:center; }
+@media (max-width:900px) { .project-media-grid { grid-template-columns:1fr; gap:26px; } }
+@media (max-width:680px) { .project-portfolio-heading { grid-template-columns:45px 1fr; gap:16px; } .project-portfolio-number { font-size:1.5rem; } .project-portfolio-item { padding:24px 20px; } .project-photo-grid { grid-template-columns:1fr; } .project-photo-grid img { height:280px; } }
