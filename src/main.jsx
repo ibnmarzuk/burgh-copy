@@ -31,19 +31,37 @@ const projectPortfolio = [
   {
     id: 'ocean-breeze-estate', number: '01', title: 'Ocean Breeze Estate', type: '3-Bedroom Semi-Detached Duplex',
     description: 'A contemporary multi-level residence featuring light and grey wall finishes, dark-framed glazing, glazed balcony elements and interlocking-paved external areas.',
-    image: 'assets/ocean-breeze/ocean-001.jpg', alt: 'Ocean Breeze Estate 3-bedroom semi-detached duplex exterior',
-    gallery: ['assets/ocean-breeze/ocean-001.jpg', 'assets/ocean-breeze/ocean-002.jpg'], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Ocean Breeze Estate project video' }], hasDetails: true
+    image: 'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png', alt: 'Ocean Breeze Estate exterior',
+    gallery: [
+      'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png',
+      'assets/project-portfolio/ocean-breeze-02-f58579b6-166d-4f6c-ba4d-ccb17d3eb470.jpg',
+      'assets/project-portfolio/ocean-breeze-03-fb51fa7c-7206-464a-9709-b05fb0c6e068.png'
+    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Ocean Breeze Estate project video' }], hasDetails: true
   },
   {
-    id: 'project-02', number: '02', title: 'Project 02', description: 'Project details, photos and videos will be added here.',
-    image: null, alt: '', gallery: [], videos: [], hasDetails: false
+    id: 'atlantic-view-estate-1', number: '02', title: 'Atlantic View Estate 1', type: 'Residential development',
+    description: 'A collection of exterior and interior views showing the completed architectural character, entry sequence, bright living spaces and evening façade lighting.',
+    image: 'assets/project-portfolio/atlantic-view-1-01-448fb319-5f91-4ba5-b321-264d8e0b6c38.png', alt: 'Atlantic View Estate 1 exterior',
+    gallery: [
+      'assets/project-portfolio/atlantic-view-1-01-448fb319-5f91-4ba5-b321-264d8e0b6c38.png',
+      'assets/project-portfolio/atlantic-view-1-02-af393790-4a18-48e2-b272-c650586b86b6.png',
+      'assets/project-portfolio/atlantic-view-1-03-ef84d291-7a99-4741-ae5b-191f5d396715.jpg',
+      'assets/project-portfolio/img-7894.jpg',
+      'assets/project-portfolio/img-8147.jpg'
+    ], videos: [], hasDetails: true
   },
   {
-    id: 'project-03', number: '03', title: 'Project 03', description: 'Project details, photos and videos will be added here.',
-    image: null, alt: '', gallery: [], videos: [], hasDetails: false
+    id: 'atlantic-view-estate-2', number: '03', title: 'Atlantic View Estate 2', type: 'Project progress',
+    description: 'Progress photography documenting the structure, façade work and active site development for the next Atlantic View Estate project.',
+    image: 'assets/project-portfolio/img-8351.jpg', alt: 'Atlantic View Estate 2 construction progress',
+    gallery: [
+      'assets/project-portfolio/img-8351.jpg',
+      'assets/project-portfolio/img-8354.jpg',
+      'assets/project-portfolio/img-8355.jpg',
+      'assets/project-portfolio/img-8356.jpg'
+    ], videos: [], hasDetails: false
   }
 ]
-
 const featuredProjects = projectPortfolio.filter(project => project.hasDetails)
 
 const galleryImages = projectPortfolio.flatMap(project => project.gallery.map((src, index) => ({ src, alt: `${project.title} — residential project image ${index + 1}`, title: project.title, projectId: project.id })))
@@ -349,7 +367,7 @@ function Projects() {
         <div className="section-heading split-heading"><div><span className="eyebrow">Project portfolio</span><h2>Every project.<br /><em>Its own story.</em></h2></div><p>Projects are numbered 01, 02 and 03. Add each project’s details, photos and videos to its own record without changing the page layout.</p></div>
         <div className="project-portfolio-list">
           {projectPortfolio.map(project => <article className={`project-portfolio-item ${project.hasDetails ? '' : 'is-pending'}`} key={project.id}>
-            <div className="project-portfolio-heading"><span className="project-portfolio-number">{project.number}</span><div><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><p>{project.description}</p></div></div>
+            <div className="project-portfolio-heading"><span className="project-portfolio-number">{project.number}</span><div><span className="project-status">{project.hasDetails ? 'FEATURED PROJECT' : 'PROJECT PROGRESS'}</span><h3>{project.title}</h3><p>{project.description}</p></div></div>
             <div className="project-media-grid">
               <div className="project-media-block"><span className="eyebrow">Photos</span>{project.gallery.length ? <div className="project-photo-grid">{project.gallery.map((src, index) => <img key={src} src={`${ASSET_BASE}${src}`} alt={`${project.title} exterior view ${index + 1}`} loading="lazy" />)}</div> : <div className="project-media-empty">Photos for this project will be added here.</div>}</div>
               <div className="project-media-block"><span className="eyebrow">Videos</span>{project.videos.length ? <div className="project-video-list">{project.videos.map(video => <figure className="project-video-item" key={video.src}><video controls preload="metadata" poster={`${ASSET_BASE}${project.gallery[0]}`} src={`${ASSET_BASE}${video.src}`} /><figcaption>{video.title}</figcaption></figure>)}</div> : <div className="project-media-empty">Video updates for this project will be added here.</div>}</div>
@@ -362,10 +380,10 @@ function Projects() {
 }
 function Gallery() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection of selected BURGH residences, using the latest project photography supplied by BURGH HOMES." />
+    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection across the three numbered BURGH projects, using the latest photography supplied by BURGH HOMES." />
     <section className="section-pad new-content-section">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Visual collection</span><h2>Spaces and<br /><em>inspiration.</em></h2></div><p>Browse the selected portfolio by project. Adding future photography is as simple as extending a project’s gallery array.</p></div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Visual collection</span><h2>Spaces and<br /><em>inspiration.</em></h2></div><p>Browse the photography by numbered project. Adding future images is as simple as extending that project’s gallery array.</p></div>
         <div className="burgh-gallery-grid">{galleryImages.map((item, index) => <figure key={`${item.projectId}-${item.src}`}><img src={`${ASSET_BASE}${item.src}`} alt={item.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, '0')}</span>{item.title}</figcaption></figure>)}</div>
       </div>
     </section>
