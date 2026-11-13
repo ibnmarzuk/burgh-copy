@@ -97,8 +97,8 @@ function navigate(path) {
 
 function Logo() {
   return (
-    <button className="logo" onClick={() => navigate('/')} aria-label="BURGH home">
-      <img className="logo-image" src={`${ASSET_BASE}burgh-logo.svg`} alt="BURGH" />
+    <button className="logo" onClick={() => navigate('/')} aria-label="BURGH HOMES home">
+      <img className="logo-image" src={`${ASSET_BASE}burgh-logo.svg`} alt="BURGH HOMES" />
     </button>
   )
 }
@@ -361,7 +361,7 @@ function Services() {
 
 function Projects() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Projects, one by one.<br /><em>See the work.</em></>} description="Browse the BURGH project portfolio. Each project has its own place for photos and videos, ready to grow as more media is supplied." />
+    <PageIntro eyebrow="BURGH HOMES / PROJECTS" title={<>Projects, one by one.<br /><em>See the work.</em></>} description="Browse the BURGH HOMES project portfolio. Each project has its own place for photos and videos, ready to grow as more media is supplied." />
     <section className="section-pad new-content-section">
       <div className="container">
         <div className="section-heading split-heading"><div><span className="eyebrow">Project portfolio</span><h2>Every project.<br /><em>Its own story.</em></h2></div><p>Projects are numbered 01, 02 and 03. Add each project’s details, photos and videos to its own record without changing the page layout.</p></div>
@@ -380,7 +380,7 @@ function Projects() {
 }
 function Gallery() {
   return <>
-    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection across the three numbered BURGH projects, using the latest photography supplied by BURGH HOMES." />
+    <PageIntro eyebrow="BURGH HOMES / GALLERY" title={<>A closer look at<br /><em>better living.</em></>} description="A visual collection across the three numbered BURGH HOMES projects, using the latest photography supplied by BURGH HOMES." />
     <section className="section-pad new-content-section">
       <div className="container">
         <div className="section-heading split-heading"><div><span className="eyebrow">Visual collection</span><h2>Spaces and<br /><em>inspiration.</em></h2></div><p>Browse the photography by numbered project. Adding future images is as simple as extending that project’s gallery array.</p></div>
