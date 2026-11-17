@@ -12,7 +12,7 @@ const navItems = [
   { path: '/about', label: 'About' },
   { path: '/services', label: 'Services' },
   { path: '/projects', label: 'Projects' },
-  { path: '/homes', label: 'Properties' },
+  { path: '/team', label: 'Burgh Team' },
   { path: '/gallery', label: 'Gallery' },
   { path: '/contact', label: 'Contact Us' },
 ]
@@ -33,23 +33,23 @@ const personnel = [
     name: 'Mustapha Kadri',
     role: 'MD / CEO',
     bio: 'Mustapha Kadri, MNSE, R.Eng (COREN), APM is an accomplished Engineer with over 18 years of experience in the oil and gas industry, covering engineering design, project management, commissioning, asset integrity, reliability engineering, and operational support. He has built a distinguished career delivering complex engineering solutions across upstream, midstream and downstream energy projects.',
-    detail: 'He has led multidisciplinary engineering teams and delivered multi-million-dollar projects across the full lifecycle, from concept development and FEED through detailed engineering, procurement, construction, commissioning, start-up and operational support. He holds a Master’s Degree in Project Management from the University of Lagos and a B.Eng. in Mechanical Engineering from the University of Ilorin.'
+    detail: 'Throughout his career, Mustapha has successfully led multidisciplinary engineering teams comprising Mechanical, Civil / Structural, Electrical, Instrumentation and Control, Process, Telecommunications, and Fire and Gas disciplines in the execution of multi-million-dollar capital projects. His expertise spans the entire project lifecycle, from concept development and Front-End Engineering Design (FEED) through detailed engineering, procurement, construction, commissioning, start-up, and operational support.',
+    experience: 'He has worked with a range of reputable organizations, from indigenous engineering companies to leading international energy operators, including Shell Nigeria Exploration and Production Company (SNEPCo), Nigeria LNG Limited (NLNG), NETCO (National Engineering and Technical Company), Amazon Energy Limited, and Integrated Engineering Services Limited (IESL). In these roles, he has delivered major projects involving subsea systems, LNG facilities, mechanical static equipment, piping systems, and asset integrity management.',
+    credentials: 'In addition to his outstanding technical delivery, he has successfully led and delivered multi-million-dollar projects, demonstrating strong project management, leadership, and execution capabilities. He holds a Master\'s Degree in Project Management from University of Lagos and a Bachelor of Engineering (B.Eng.) in Mechanical Engineering from University of Ilorin. He is a Registered Engineer with the Council for the Regulation of Engineering in Nigeria (COREN), a member of the Nigerian Society of Engineers (NSE), and a Corporate Member of the Association for Project Management (APM), United Kingdom.'
   },
   {
     initials: 'CE',
     image: 'assets/personnel/civil-engineer.jpg',
     name: 'Civil / Structural Engineer',
     role: 'Engineering & Construction',
-    bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship and ensuring compliance with engineering drawings and specifications.',
-    detail: 'His expertise includes reinforced concrete and structural steel design, foundation engineering and construction management, with proficiency in AutoCAD, ProtaStructure and Revit. He holds an HND in Civil Engineering and a National Youth Service Corps (NYSC) Certificate, and is committed to advancing his career in structural design and project delivery.'
+    bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination, and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship, and ensuring compliance with engineering drawings and specifications. He possesses foundational expertise in reinforced concrete and structural steel design, foundation engineering, and construction management, with proficiency in AutoCAD, ProtaStructure, and Revit. He holds an HND in Civil Engineering and a National Youth Service Corps (NYSC) Certificate, and is committed to advancing his career in structural design, project delivery, and the construction industry.'
   },
   {
     initials: 'OR',
     image: 'assets/personnel/project-manager-half.jpg',
     name: 'Olaoye Ridwan',
     role: 'Project Manager',
-    bio: 'Olaoye Ridwan is a skilled Architect and Site Architect with over 8 years of experience in architectural design, site planning, project supervision and construction coordination. A graduate of Architecture from the Federal University Birnin Kebbi, he has successfully delivered residential, educational, industrial and institutional projects.',
-    detail: 'Currently with Burgh Atlantic Home, Lagos, he oversees site operations and architectural project execution while contributing to innovative developments. Known for his attention to detail, strong project management skills and commitment to sustainable design, Ridwan is passionate about creating functional, aesthetically pleasing and community-focused buildings.'
+    bio: 'Olaoye Ridwan is a skilled Architect and Site Architect with over 8 years of experience in architectural design, site planning, project supervision, and construction coordination. A graduate of Architecture from the Federal University Birnin Kebbi, he has successfully delivered residential, educational, industrial, and institutional projects. Currently with Burgh Atlantic Home, Lagos, he oversees site operations and architectural project execution while contributing to innovative developments. Known for his attention to detail, strong project management skills, and commitment to sustainable design, Ridwan is passionate about creating functional, aesthetically pleasing, and community-focused buildings that stand the test of time.'
   }
 ]
 
@@ -324,8 +324,10 @@ function Home() {
   </>
 }
 
-function Personnel() {
+function Team() {
   return (
+    <>
+    <PageIntro eyebrow="BURGH / TEAM" title={<>The people behind<br /><em>better places.</em></>} description="Meet the experienced professionals shaping BURGH's engineering, design and property delivery." />
     <section className="personnel-section section-pad">
       <div className="container">
         <div className="section-heading split-heading">
@@ -340,13 +342,16 @@ function Personnel() {
                 <span className="personnel-role">{member.role}</span>
                 <h3>{member.name}</h3>
                 <p>{member.bio}</p>
-                <p>{member.detail}</p>
+                {member.detail && <p>{member.detail}</p>}
+                {member.experience && <p>{member.experience}</p>}
+                {member.credentials && <p>{member.credentials}</p>}
               </div>
             </article>
           ))}
         </div>
       </div>
     </section>
+    </>
   )
 }
 
@@ -370,7 +375,6 @@ function About() {
         <div className="vm-card gold"><span className="eyebrow">Our mission</span><p>To develop and present quality residential properties that create accessible homeownership opportunities, exceptional living experiences and lasting value for homeowners and investors.</p></div>
       </div>
     </section>
-    <Personnel />
     <Values />
     <section className="cta-band homes-cta">
       <div className="container cta-inner"><span className="eyebrow">Let’s talk about your next move</span><h2>Let’s find the right<br /><em>place for you.</em></h2><button className="button button-light" onClick={() => navigate('/contact?division=homes')}>Talk to BURGH HOMES <Arrow /></button></div>
@@ -507,6 +511,7 @@ function App() {
     const titles = {
       '/': 'BURGH HOMES | A better place to call home.',
       '/about': 'About BURGH HOMES | Thoughtfully planned. Made for living.',
+      '/team': 'Burgh Team | BURGH HOMES personnel',
       '/homes': 'BURGH HOMES | Residential properties and homes.',
       '/services': 'Services | BURGH HOMES residential property solutions.',
       '/projects': 'Projects | BURGH HOMES selected residences.',
@@ -515,7 +520,7 @@ function App() {
     }
     document.title = titles[path] || titles['/']
   }, [path])
-  const page = path === '/about' ? <About /> : path === '/services' ? <Services /> : path === '/projects' ? <Projects /> : path === '/gallery' ? <Gallery /> : path === '/homes' ? <Homes /> : path === '/contact' ? <Contact /> : <Home />
+  const page = path === '/about' ? <About /> : path === '/team' ? <Team /> : path === '/services' ? <Services /> : path === '/projects' ? <Projects /> : path === '/gallery' ? <Gallery /> : path === '/homes' ? <Homes /> : path === '/contact' ? <Contact /> : <Home />
   return <><Header /><main>{page}</main><Footer /></>
 }
 

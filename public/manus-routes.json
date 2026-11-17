@@ -5,6 +5,7 @@
     { "path": "/services", "title": "Services | BURGH HOMES" },
     { "path": "/projects", "title": "Projects | BURGH HOMES" },
     { "path": "/homes", "title": "BURGH HOMES" },
+    { "path": "/team", "title": "Burgh Team | BURGH HOMES" },
     { "path": "/gallery", "title": "Gallery | BURGH HOMES" },
     { "path": "/contact", "title": "Contact BURGH HOMES" }
   ]
