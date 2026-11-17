@@ -318,7 +318,8 @@ textarea:disabled {
 .personnel-section { background: #f0f2f2; }
 .personnel-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px; }
 .personnel-card { background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; min-width:0; }
-.personnel-avatar { min-height:220px; display:grid; place-items:center; background:linear-gradient(145deg, #173650, #0b1f33); color:var(--gold-soft); font:700 clamp(3.8rem, 7vw, 5.8rem)/1 'Manrope'; letter-spacing:-.08em; }
+.personnel-avatar { min-height:220px; display:grid; place-items:center; overflow:hidden; background:linear-gradient(145deg, #173650, #0b1f33); color:var(--gold-soft); font:700 clamp(3.8rem, 7vw, 5.8rem)/1 'Manrope'; letter-spacing:-.08em; }
+.personnel-avatar img { width:100%; height:100%; min-height:220px; object-fit:cover; object-position:center 22%; display:block; }
 .personnel-card:nth-child(2) .personnel-avatar { background:linear-gradient(145deg, #53686d, #183d48); }
 .personnel-card:nth-child(3) .personnel-avatar { background:linear-gradient(145deg, #8a6b42, #3c2e27); }
 .personnel-card-body { padding:27px 27px 30px; }

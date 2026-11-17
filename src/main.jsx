@@ -29,6 +29,7 @@ const values = [
 const personnel = [
   {
     initials: 'MK',
+    image: 'assets/personnel/md-ceo.jpg',
     name: 'Mustapha Kadri',
     role: 'MD / CEO',
     bio: 'Mustapha Kadri, MNSE, R.Eng (COREN), APM is an accomplished Engineer with over 18 years of experience in the oil and gas industry, covering engineering design, project management, commissioning, asset integrity, reliability engineering, and operational support. He has built a distinguished career delivering complex engineering solutions across upstream, midstream and downstream energy projects.',
@@ -332,7 +333,7 @@ function Personnel() {
         <div className="personnel-grid">
           {personnel.map(member => (
             <article className="personnel-card" key={member.name}>
-              <div className="personnel-avatar" aria-hidden="true">{member.initials}</div>
+              <div className="personnel-avatar">{member.image ? <img src={`${ASSET_BASE}${member.image}`} alt={`${member.name} profile`} /> : member.initials}</div>
               <div className="personnel-card-body">
                 <span className="personnel-role">{member.role}</span>
                 <h3>{member.name}</h3>
