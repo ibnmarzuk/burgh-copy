@@ -37,6 +37,7 @@ const personnel = [
   },
   {
     initials: 'CE',
+    image: 'assets/personnel/civil-engineer.jpg',
     name: 'Civil / Structural Engineer',
     role: 'Engineering & Construction',
     bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship and ensuring compliance with engineering drawings and specifications.',
