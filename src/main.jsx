@@ -45,6 +45,7 @@ const personnel = [
   },
   {
     initials: 'OR',
+    image: 'assets/personnel/project-manager.jpg',
     name: 'Olaoye Ridwan',
     role: 'Project Manager',
     bio: 'Olaoye Ridwan is a skilled Architect and Site Architect with over 8 years of experience in architectural design, site planning, project supervision and construction coordination. A graduate of Architecture from the Federal University Birnin Kebbi, he has successfully delivered residential, educational, industrial and institutional projects.',
