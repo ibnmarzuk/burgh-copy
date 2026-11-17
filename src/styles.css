@@ -312,3 +312,19 @@ textarea:disabled {
 .project-video-item { margin:0; }
 .project-video-item video { width:100%; aspect-ratio:16/9; min-height:0; object-fit:cover; display:block; background:var(--navy); }
 .project-video-item figcaption { padding-top:10px; color:var(--muted); font-size:.76rem; }
+
+
+/* About / Personnel */
+.personnel-section { background: #f0f2f2; }
+.personnel-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px; }
+.personnel-card { background:#fff; border:1px solid var(--line); display:flex; flex-direction:column; min-width:0; }
+.personnel-avatar { min-height:220px; display:grid; place-items:center; background:linear-gradient(145deg, #173650, #0b1f33); color:var(--gold-soft); font:700 clamp(3.8rem, 7vw, 5.8rem)/1 'Manrope'; letter-spacing:-.08em; }
+.personnel-card:nth-child(2) .personnel-avatar { background:linear-gradient(145deg, #53686d, #183d48); }
+.personnel-card:nth-child(3) .personnel-avatar { background:linear-gradient(145deg, #8a6b42, #3c2e27); }
+.personnel-card-body { padding:27px 27px 30px; }
+.personnel-role { color:var(--gold); font-size:.65rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.personnel-card h3 { color:var(--ink); font-size:1.42rem; margin:13px 0 18px; }
+.personnel-card p { color:var(--muted); font-size:.82rem; line-height:1.75; }
+.personnel-card p + p { margin-top:14px; }
+@media (max-width:900px) { .personnel-grid { grid-template-columns:1fr 1fr; } .personnel-card:last-child { grid-column:1 / -1; max-width:calc(50% - 10px); } }
+@media (max-width:680px) { .personnel-grid { grid-template-columns:1fr; } .personnel-card:last-child { grid-column:auto; max-width:none; } .personnel-avatar { min-height:190px; } .personnel-card-body { padding:24px 22px 26px; } }

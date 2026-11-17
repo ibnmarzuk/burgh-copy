@@ -26,6 +26,30 @@ const values = [
   ['06', 'Excellence', 'We keep raising the bar in service and execution.'],
 ]
 
+const personnel = [
+  {
+    initials: 'MK',
+    name: 'Mustapha Kadri',
+    role: 'MD / CEO',
+    bio: 'Mustapha Kadri, MNSE, R.Eng (COREN), APM is an accomplished Engineer with over 18 years of experience in the oil and gas industry, covering engineering design, project management, commissioning, asset integrity, reliability engineering, and operational support. He has built a distinguished career delivering complex engineering solutions across upstream, midstream and downstream energy projects.',
+    detail: 'He has led multidisciplinary engineering teams and delivered multi-million-dollar projects across the full lifecycle, from concept development and FEED through detailed engineering, procurement, construction, commissioning, start-up and operational support. He holds a Master’s Degree in Project Management from the University of Lagos and a B.Eng. in Mechanical Engineering from the University of Ilorin.'
+  },
+  {
+    initials: 'CE',
+    name: 'Civil / Structural Engineer',
+    role: 'Engineering & Construction',
+    bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship and ensuring compliance with engineering drawings and specifications.',
+    detail: 'His expertise includes reinforced concrete and structural steel design, foundation engineering and construction management, with proficiency in AutoCAD, ProtaStructure and Revit. He holds an HND in Civil Engineering and a National Youth Service Corps (NYSC) Certificate, and is committed to advancing his career in structural design and project delivery.'
+  },
+  {
+    initials: 'OR',
+    name: 'Olaoye Ridwan',
+    role: 'Project Manager',
+    bio: 'Olaoye Ridwan is a skilled Architect and Site Architect with over 8 years of experience in architectural design, site planning, project supervision and construction coordination. A graduate of Architecture from the Federal University Birnin Kebbi, he has successfully delivered residential, educational, industrial and institutional projects.',
+    detail: 'Currently with Burgh Atlantic Home, Lagos, he oversees site operations and architectural project execution while contributing to innovative developments. Known for his attention to detail, strong project management skills and commitment to sustainable design, Ridwan is passionate about creating functional, aesthetically pleasing and community-focused buildings.'
+  }
+]
+
 // Add future featured developments here; the homepage and Projects page render from this collection.
 const projectPortfolio = [
   {
@@ -297,6 +321,32 @@ function Home() {
   </>
 }
 
+function Personnel() {
+  return (
+    <section className="personnel-section section-pad">
+      <div className="container">
+        <div className="section-heading split-heading">
+          <div><span className="eyebrow">The people behind BURGH</span><h2>Meet the team<br /><em>shaping what’s next.</em></h2></div>
+          <p>Our work is powered by experienced professionals who bring engineering, design, project leadership and a commitment to better places.</p>
+        </div>
+        <div className="personnel-grid">
+          {personnel.map(member => (
+            <article className="personnel-card" key={member.name}>
+              <div className="personnel-avatar" aria-hidden="true">{member.initials}</div>
+              <div className="personnel-card-body">
+                <span className="personnel-role">{member.role}</span>
+                <h3>{member.name}</h3>
+                <p>{member.bio}</p>
+                <p>{member.detail}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function About() {
   return <>
     <PageIntro eyebrow="About BURGH HOMES" title={<>A better place to<br /><em>build your future.</em></>} description="BURGH HOMES is a residential real estate development and housing company focused on creating affordable and luxury homes for individuals, families, professionals and investors." />
@@ -317,6 +367,7 @@ function About() {
         <div className="vm-card gold"><span className="eyebrow">Our mission</span><p>To develop and present quality residential properties that create accessible homeownership opportunities, exceptional living experiences and lasting value for homeowners and investors.</p></div>
       </div>
     </section>
+    <Personnel />
     <Values />
     <section className="cta-band homes-cta">
       <div className="container cta-inner"><span className="eyebrow">Let’s talk about your next move</span><h2>Let’s find the right<br /><em>place for you.</em></h2><button className="button button-light" onClick={() => navigate('/contact?division=homes')}>Talk to BURGH HOMES <Arrow /></button></div>
