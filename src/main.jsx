@@ -307,7 +307,7 @@ function Home() {
 
     <section className="featured-projects-section section-pad">
       <div className="container">
-        <div className="section-heading split-heading"><div><span className="eyebrow">Featured projects</span><h2>Places shaped for<br /><em>better living.</em></h2></div><p>Explore Ocean Breeze Estate, a 3-bedroom semi-detached duplex presented through its exterior architectural photography.</p></div>
+        <div className="section-heading split-heading"><div><span className="eyebrow">Featured projects</span><h2>Places shaped for<br /><em>better living.</em></h2></div><p>Explore Burgh Ocean, a 3-bedroom semi-detached duplex presented through its exterior architectural photography.</p></div>
         <div className="project-card-grid">{featuredProjects.map(project => <article className="project-card" key={project.id}><div className="project-card-image"><img src={`${ASSET_BASE}${project.image}`} alt={project.alt} loading="lazy" /><span>{project.number}</span></div><div className="project-card-copy"><span className="project-status">FEATURED PROJECT</span><h3>{project.title}</h3><button className="text-link" onClick={() => navigate('/projects')}>View project details <Arrow /></button></div></article>)}</div>
       </div>
     </section>
