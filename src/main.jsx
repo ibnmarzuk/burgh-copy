@@ -45,9 +45,9 @@ const personnel = [
     bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination, and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship, and ensuring compliance with engineering drawings and specifications. He possesses foundational expertise in reinforced concrete and structural steel design, foundation engineering, and construction management, with proficiency in AutoCAD, ProtaStructure, and Revit. He holds an HND in Civil Engineering and a National Youth Service Corps (NYSC) Certificate, and is committed to advancing his career in structural design, project delivery, and the construction industry.'
   },
   {
-    initials: 'OR',
+    initials: 'RA',
     image: 'assets/personnel/project-manager-half.jpg',
-    name: 'Olaoye Ridwan',
+    name: 'Ridwan AbdulQuadri',
     role: 'Project Manager',
     bio: 'Olaoye Ridwan is a skilled Architect and Site Architect with over 8 years of experience in architectural design, site planning, project supervision, and construction coordination. A graduate of Architecture from the Federal University Birnin Kebbi, he has successfully delivered residential, educational, industrial, and institutional projects. Currently with Burgh Atlantic Home, Lagos, he oversees site operations and architectural project execution while contributing to innovative developments. Known for his attention to detail, strong project management skills, and commitment to sustainable design, Ridwan is passionate about creating functional, aesthetically pleasing, and community-focused buildings that stand the test of time.'
   }
@@ -56,19 +56,19 @@ const personnel = [
 // Add future featured developments here; the homepage and Projects page render from this collection.
 const projectPortfolio = [
   {
-    id: 'ocean-breeze-estate', number: '01', title: 'Ocean Breeze Estate', type: '3-Bedroom Semi-Detached Duplex',
+    id: 'ocean-breeze-estate', number: '01', title: 'Burgh Ocean', type: '3-Bedroom Semi-Detached Duplex',
     description: 'A contemporary multi-level residence featuring light and grey wall finishes, dark-framed glazing, glazed balcony elements and interlocking-paved external areas.',
-    image: 'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png', alt: 'Ocean Breeze Estate exterior',
+    image: 'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png', alt: 'Burgh Ocean exterior',
     gallery: [
       'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png',
       'assets/project-portfolio/ocean-breeze-02-f58579b6-166d-4f6c-ba4d-ccb17d3eb470.jpg',
       'assets/project-portfolio/ocean-breeze-03-fb51fa7c-7206-464a-9709-b05fb0c6e068.png'
-    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Ocean Breeze Estate project video' }], hasDetails: true
+    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Burgh Ocean project video' }], hasDetails: true
   },
   {
-    id: 'atlantic-view-estate-1', number: '02', title: 'Atlantic View Estate 1', type: 'Residential development',
+    id: 'atlantic-view-estate-1', number: '02', title: 'Burgh Atlantic 1', type: 'Residential development',
     description: 'A collection of exterior and interior views showing the completed architectural character, entry sequence, bright living spaces and evening façade lighting.',
-    image: 'assets/project-portfolio/atlantic-view-1-01-448fb319-5f91-4ba5-b321-264d8e0b6c38.png', alt: 'Atlantic View Estate 1 exterior',
+    image: 'assets/project-portfolio/atlantic-view-1-01-448fb319-5f91-4ba5-b321-264d8e0b6c38.png', alt: 'Burgh Atlantic 1 exterior',
     gallery: [
       'assets/project-portfolio/atlantic-view-1-01-448fb319-5f91-4ba5-b321-264d8e0b6c38.png',
       'assets/project-portfolio/atlantic-view-1-02-af393790-4a18-48e2-b272-c650586b86b6.png',
@@ -78,9 +78,9 @@ const projectPortfolio = [
     ], videos: [], hasDetails: true
   },
   {
-    id: 'atlantic-view-estate-2', number: '03', title: 'Atlantic View Estate 2', type: 'Project progress',
+    id: 'atlantic-view-estate-2', number: '03', title: 'Burgh Atlantic 2', type: 'Project progress',
     description: 'Progress photography documenting the structure, façade work and active site development for the next Atlantic View Estate project.',
-    image: 'assets/project-portfolio/img-8351.jpg', alt: 'Atlantic View Estate 2 construction progress',
+    image: 'assets/project-portfolio/img-8351.jpg', alt: 'Burgh Atlantic 2 construction progress',
     gallery: [
       'assets/project-portfolio/img-8351.jpg',
       'assets/project-portfolio/img-8354.jpg',
