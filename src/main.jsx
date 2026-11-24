@@ -125,7 +125,7 @@ function navigate(path) {
 function Logo() {
   return (
     <button className="logo" onClick={() => navigate('/')} aria-label="BURGH HOMES home">
-      <img className="logo-image" src={`${ASSET_BASE}assets/brand/burgh-homes-logo.jpg`} alt="BURGH HOMES" />
+      <img className="logo-image" src={`${ASSET_BASE}assets/brand/burgh-homes-logo-transparent.png`} alt="BURGH HOMES" />
     </button>
   )
 }

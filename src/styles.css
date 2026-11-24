@@ -10,7 +10,7 @@ a { color: inherit; text-decoration: none; }
  .header-inner { height: 92px; display: flex; align-items: center; justify-content: space-between; }
 .logo-image { width: 150px; }
 .logo { display: inline-flex; align-items: center; justify-content: flex-start; background: none; border: 0; color: inherit; padding: 0; flex-shrink: 0; }
-.logo-image { display: block; width: 150px; height: 52px; object-fit: contain; object-position: left center; background: #fbfaf7; padding: 3px 6px; }
+.logo-image { display: block; width: 150px; height: 52px; object-fit: contain; object-position: left center; background: transparent; padding: 0; }
 
 .main-nav { display: flex; align-items: center; gap: 28px; }.main-nav button, .footer-links button { background: none; border: 0; color: inherit; padding: 8px 0; font-size: .76rem; letter-spacing: .09em; text-transform: uppercase; opacity: .74; transition: opacity .2s, color .2s; }.main-nav button:hover, .main-nav button.active { opacity: 1; color: var(--gold-soft); }.main-nav .header-cta { opacity: 1; color: var(--navy); background: var(--gold); padding: 13px 17px; margin-left: 8px; font-weight: 700; letter-spacing: .04em; }.header-cta .arrow { color: var(--navy); }
 .mobile-toggle { display:none; border: 0; background: none; padding: 10px; }.mobile-toggle span { display: block; height: 1px; background: white; width: 24px; margin: 6px; }
