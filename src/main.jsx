@@ -38,16 +38,16 @@ const personnel = [
     credentials: 'In addition to his outstanding technical delivery, he has successfully led and delivered multi-million-dollar projects, demonstrating strong project management, leadership, and execution capabilities. He holds a Master\'s Degree in Project Management from University of Lagos and a Bachelor of Engineering (B.Eng.) in Mechanical Engineering from University of Ilorin. He is a Registered Engineer with the Council for the Regulation of Engineering in Nigeria (COREN), a member of the Nigerian Society of Engineers (NSE), and a Corporate Member of the Association for Project Management (APM), United Kingdom.'
   },
   {
-    initials: 'CE',
+    initials: 'RA',
     image: 'assets/personnel/civil-engineer.jpg',
-    name: 'Civil / Structural Engineer',
+    name: 'Ridwan AbdulQuadri',
     role: 'Engineering & Construction',
     bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination, and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship, and ensuring compliance with engineering drawings and specifications. He possesses foundational expertise in reinforced concrete and structural steel design, foundation engineering, and construction management, with proficiency in AutoCAD, ProtaStructure, and Revit. He holds an HND in Civil Engineering and a National Youth Service Corps (NYSC) Certificate, and is committed to advancing his career in structural design, project delivery, and the construction industry.'
   },
   {
-    initials: 'RA',
+    initials: 'OR',
     image: 'assets/personnel/project-manager-half.jpg',
-    name: 'Ridwan AbdulQuadri',
+    name: 'Olaoye Ridwan',
     role: 'Project Manager',
     bio: 'Olaoye Ridwan is a skilled Architect and Site Architect with over 8 years of experience in architectural design, site planning, project supervision, and construction coordination. A graduate of Architecture from the Federal University Birnin Kebbi, he has successfully delivered residential, educational, industrial, and institutional projects. Currently with Burgh Atlantic Home, Lagos, he oversees site operations and architectural project execution while contributing to innovative developments. Known for his attention to detail, strong project management skills, and commitment to sustainable design, Ridwan is passionate about creating functional, aesthetically pleasing, and community-focused buildings that stand the test of time.'
   }
