@@ -323,3 +323,10 @@ textarea:disabled {
 .personnel-card p + p { margin-top:14px; }
 @media (max-width:900px) { .personnel-grid { grid-template-columns:1fr 1fr; } .personnel-card:last-child { grid-column:1 / -1; max-width:calc(50% - 10px); } }
 @media (max-width:680px) { .personnel-grid { grid-template-columns:1fr; } .personnel-card:last-child { grid-column:auto; max-width:none; } .personnel-avatar { min-height:190px; } .personnel-card-body { padding:24px 22px 26px; } }
+
+
+/* Project video media */
+.project-video-section { margin-top:22px; }
+.project-video-grid { display:grid; grid-template-columns:minmax(0,1fr); max-width:760px; }
+.project-video-grid video { display:block; width:100%; max-height:480px; background:#071522; }
+@media (max-width:680px) { .project-video-section { margin-top:18px; } .project-video-grid video { max-height:300px; } }
