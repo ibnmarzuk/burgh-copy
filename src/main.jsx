@@ -426,9 +426,9 @@ function Projects() {
         <div className="project-portfolio-list">
           {projectPortfolio.map(project => <article className={`project-portfolio-item ${project.hasDetails ? '' : 'is-pending'}`} key={project.id}>
             <div className="project-portfolio-heading"><span className="project-portfolio-number">{project.number}</span><div><span className="project-status">{project.hasDetails ? 'FEATURED PROJECT' : 'PROJECT PROGRESS'}</span><h3>{project.title}</h3><p>{project.description}</p></div></div>
-            <div className="project-media-grid">
-              <div className="project-media-block"><span className="eyebrow">Photos</span>{project.gallery.length ? <div className="project-photo-grid">{project.gallery.map((src, index) => <img key={src} src={`${ASSET_BASE}${src}`} alt={`${project.title} exterior view ${index + 1}`} loading="lazy" />)}</div> : <div className="project-media-empty">Photos for this project will be added here.</div>}</div>
-              <div className="project-media-block"><span className="eyebrow">Videos</span>{project.videos.length ? <div className="project-video-list">{project.videos.map(video => <figure className="project-video-item" key={video.src}><video controls preload="metadata" poster={`${ASSET_BASE}${project.gallery[0]}`} src={`${ASSET_BASE}${video.src}`} /><figcaption>{video.title}</figcaption></figure>)}</div> : <div className="project-media-empty">Video updates for this project will be added here.</div>}</div>
+            <div className="project-media-block project-photos-only">
+              <span className="eyebrow">Photos</span>
+              {project.gallery.length > 0 && <div className="project-photo-grid">{project.gallery.map((src, index) => <img key={src} src={`${ASSET_BASE}${src}`} alt={`${project.title} exterior view ${index + 1}`} loading="lazy" />)}</div>}
             </div>
           </article>)}
         </div>
