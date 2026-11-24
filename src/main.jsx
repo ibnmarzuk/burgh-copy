@@ -41,7 +41,7 @@ const personnel = [
     initials: 'RA',
     image: 'assets/personnel/civil-engineer.jpg',
     name: 'Ridwan AbdulQuadri',
-    role: 'Engineering & Construction',
+    role: 'Civil / Structural Engineer',
     bio: 'A Civil Engineer and Higher National Diploma (HND) graduate of Kwara State Polytechnic, with practical experience in site supervision, construction coordination, and structural engineering. He has contributed to residential and public building projects, overseeing construction activities, monitoring workmanship, and ensuring compliance with engineering drawings and specifications. He possesses foundational expertise in reinforced concrete and structural steel design, foundation engineering, and construction management, with proficiency in AutoCAD, ProtaStructure, and Revit. He holds an HND in Civil Engineering and a National Youth Service Corps (NYSC) Certificate, and is committed to advancing his career in structural design, project delivery, and the construction industry.'
   },
   {
