@@ -63,7 +63,7 @@ const projectPortfolio = [
       'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png',
       'assets/project-portfolio/ocean-breeze-02-f58579b6-166d-4f6c-ba4d-ccb17d3eb470.jpg',
       'assets/project-portfolio/ocean-breeze-03-fb51fa7c-7206-464a-9709-b05fb0c6e068.png'
-    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Burgh Ocean project video' }], hasDetails: true
+    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Burgh Atlantic project video' }], hasDetails: true
   },
   {
     id: 'atlantic-view-estate-1', number: '02', title: 'Burgh Atlantic 1', type: 'Residential development',
@@ -429,6 +429,7 @@ function Projects() {
             <div className="project-media-block project-photos-only">
               <span className="eyebrow">Photos</span>
               {project.gallery.length > 0 && <div className="project-photo-grid">{project.gallery.map((src, index) => <img key={src} src={`${ASSET_BASE}${src}`} alt={`${project.title} exterior view ${index + 1}`} loading="lazy" />)}</div>}
+              {project.videos?.length > 0 && <div className="project-video-section"><span className="eyebrow">Project video</span><div className="project-video-grid">{project.videos.map(video => <video key={video.src} controls preload="metadata" aria-label={video.title}><source src={`${ASSET_BASE}${video.src}`} type="video/mp4" />Your browser does not support the video tag.</video>)}</div></div>}
             </div>
           </article>)}
         </div>
