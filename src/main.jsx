@@ -63,7 +63,7 @@ const projectPortfolio = [
       'assets/project-portfolio/ocean-breeze-01-22db2a3c-1f29-4346-82d1-7f36e0f56862.png',
       'assets/project-portfolio/ocean-breeze-02-f58579b6-166d-4f6c-ba4d-ccb17d3eb470.jpg',
       'assets/project-portfolio/ocean-breeze-03-fb51fa7c-7206-464a-9709-b05fb0c6e068.png'
-    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Burgh Atlantic project video' }], hasDetails: true
+    ], videos: [], hasDetails: true
   },
   {
     id: 'atlantic-view-estate-1', number: '02', title: 'Burgh Atlantic 1', type: 'Residential development',
@@ -75,7 +75,7 @@ const projectPortfolio = [
       'assets/project-portfolio/atlantic-view-1-03-ef84d291-7a99-4741-ae5b-191f5d396715.jpg',
       'assets/project-portfolio/img-7894.jpg',
       'assets/project-portfolio/img-8147.jpg'
-    ], videos: [], hasDetails: true
+    ], videos: [{ src: 'assets/ocean-breeze/ocean-breeze-estate-tour.mp4', title: 'Burgh Atlantic project video' }], hasDetails: true
   },
   {
     id: 'atlantic-view-estate-2', number: '03', title: 'Burgh Atlantic 2', type: 'Project progress',
