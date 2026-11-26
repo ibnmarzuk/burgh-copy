@@ -330,3 +330,50 @@ textarea:disabled {
 .project-video-grid { display:grid; grid-template-columns:minmax(0,1fr); max-width:760px; }
 .project-video-grid video { display:block; width:100%; max-height:480px; background:#071522; }
 @media (max-width:680px) { .project-video-section { margin-top:18px; } .project-video-grid video { max-height:300px; } }
+
+
+/* Brand clarity: preserve the original BURGH logo artwork and give it a clean, high-contrast frame. */
+.site-header .logo,
+.site-footer .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(11, 31, 51, .10);
+  border-radius: 6px;
+  padding: 7px 13px;
+  min-height: 72px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
+}
+.site-header .logo-image,
+.site-footer .logo-image {
+  display: block;
+  width: 184px;
+  height: 56px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  padding: 0;
+}
+.site-footer .logo {
+  box-shadow: none;
+}
+.homes-brand-logo {
+  box-sizing: content-box;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid rgba(11, 31, 51, .10);
+  border-radius: 8px;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.22));
+}
+@media (max-width: 900px) {
+  .site-header .logo-image { width: 164px; height: 50px; }
+  .site-header .logo { min-height: 64px; padding: 6px 10px; }
+}
+@media (max-width: 680px) {
+  .site-header .logo-image,
+  .site-footer .logo-image { width: 142px; height: 44px; }
+  .site-header .logo,
+  .site-footer .logo { min-height: 56px; padding: 5px 8px; }
+  .homes-brand-logo { padding: 10px 12px; }
+}
