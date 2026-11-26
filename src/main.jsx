@@ -55,7 +55,7 @@ const personnel = [
     initials: 'AG',
     name: 'AbdulSalam Gidado',
     role: 'Materials Procurement & Inventory Officer',
-    bio: 'AbdulSalam Gidado holds a Bachelor's degree in Linguistics from Kwara State University, Ilorin. He is responsible for coordinating the procurement, storage, and management of materials, ensuring proper documentation and accurate records of material utilization. His responsibilities include monitoring inventory, maintaining organized storage systems, tracking material usage, and supporting efficient resource management'
+    bio: "AbdulSalam Gidado holds a Bachelor's degree in Linguistics from Kwara State University, Ilorin. He is responsible for coordinating the procurement, storage, and management of materials, ensuring proper documentation and accurate records of material utilization. His responsibilities include monitoring inventory, maintaining organized storage systems, tracking material usage, and supporting efficient resource management"
   }
 ]
 
