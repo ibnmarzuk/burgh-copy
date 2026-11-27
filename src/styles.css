@@ -375,3 +375,79 @@ textarea:disabled {
   .site-footer .logo-image { width: 138px; height: 46px; }
   .homes-brand-logo { padding: 0; }
 }
+
+
+/* BURGH HOMES adaptive header: white at page top, original navy on scroll. */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  color: var(--ink);
+  background: #fff;
+  border-bottom: 1px solid rgba(11,31,51,.08);
+  box-shadow: 0 2px 14px rgba(11,31,51,.045);
+  transition: background-color .28s ease, color .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.site-header.is-at-top {
+  color: var(--ink);
+  background: #fff;
+  border-bottom-color: rgba(11,31,51,.08);
+  box-shadow: 0 2px 14px rgba(11,31,51,.045);
+}
+.site-header.is-scrolled {
+  color: #fff;
+  background: #071827;
+  border-bottom-color: rgba(255,255,255,.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+.site-header .main-nav button {
+  color: inherit;
+}
+.site-header.is-at-top .main-nav button:not(.header-cta):hover,
+.site-header.is-at-top .main-nav button:not(.header-cta).active {
+  color: #9b7137;
+}
+.site-header.is-scrolled .main-nav button:not(.header-cta):hover,
+.site-header.is-scrolled .main-nav button:not(.header-cta).active {
+  color: var(--gold-soft);
+}
+.site-header.is-at-top .main-nav .header-cta {
+  color: #fff;
+  background: var(--navy);
+}
+.site-header.is-at-top .main-nav .header-cta .arrow {
+  color: #fff;
+}
+.site-header.is-scrolled .main-nav .header-cta {
+  color: var(--navy);
+  background: var(--gold);
+}
+.site-header.is-scrolled .main-nav .header-cta .arrow {
+  color: var(--navy);
+}
+.site-header.is-at-top .mobile-toggle span { background: var(--navy); }
+.site-header.is-scrolled .mobile-toggle span { background: #fff; }
+.site-header .logo-image {
+  filter: none;
+  transition: opacity .2s ease;
+}
+.site-header.is-scrolled .logo-image {
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,.22));
+}
+@media (max-width: 680px) {
+  .site-header.is-at-top .main-nav {
+    color: var(--ink);
+    background: #fff;
+    border-top: 1px solid var(--line);
+  }
+  .site-header.is-at-top .main-nav button:not(.header-cta) { color: var(--ink); }
+  .site-header.is-scrolled .main-nav {
+    color: #fff;
+    background: #071827;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .site-header.is-scrolled .main-nav button:not(.header-cta) { color: #fff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header { transition: none; }
+}
