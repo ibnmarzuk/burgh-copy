@@ -332,24 +332,24 @@ textarea:disabled {
 @media (max-width:680px) { .project-video-section { margin-top:18px; } .project-video-grid video { max-height:300px; } }
 
 
-/* Brand clarity: preserve the original BURGH logo artwork and give it a clean, high-contrast frame. */
+/* Brand clarity: keep the original BURGH logo crisp, visible and visually integrated. */
 .site-header .logo,
 .site-footer .logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  border: 1px solid rgba(11, 31, 51, .10);
-  border-radius: 6px;
-  padding: 7px 13px;
-  min-height: 72px;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
+  background: #f8f6f0;
+  border: 1px solid rgba(212, 167, 92, .48);
+  border-radius: 5px;
+  padding: 7px 14px;
+  min-height: 68px;
+  box-shadow: 0 8px 24px rgba(5, 20, 33, .16);
 }
 .site-header .logo-image,
 .site-footer .logo-image {
   display: block;
-  width: 184px;
-  height: 56px;
+  width: 178px;
+  height: 54px;
   object-fit: contain;
   object-position: center;
   background: transparent;
@@ -357,23 +357,24 @@ textarea:disabled {
 }
 .site-footer .logo {
   box-shadow: none;
+  border-color: rgba(212, 167, 92, .35);
 }
 .homes-brand-logo {
   box-sizing: content-box;
-  padding: 18px 22px;
-  background: #fff;
-  border: 1px solid rgba(11, 31, 51, .10);
-  border-radius: 8px;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,.22));
+  padding: 16px 20px;
+  background: #f8f6f0;
+  border: 1px solid rgba(212, 167, 92, .55);
+  border-radius: 6px;
+  filter: drop-shadow(0 14px 30px rgba(0,0,0,.24));
 }
 @media (max-width: 900px) {
-  .site-header .logo-image { width: 164px; height: 50px; }
-  .site-header .logo { min-height: 64px; padding: 6px 10px; }
+  .site-header .logo-image { width: 160px; height: 48px; }
+  .site-header .logo { min-height: 62px; padding: 6px 10px; }
 }
 @media (max-width: 680px) {
   .site-header .logo-image,
-  .site-footer .logo-image { width: 142px; height: 44px; }
+  .site-footer .logo-image { width: 138px; height: 42px; }
   .site-header .logo,
-  .site-footer .logo { min-height: 56px; padding: 5px 8px; }
-  .homes-brand-logo { padding: 10px 12px; }
+  .site-footer .logo { min-height: 54px; padding: 5px 8px; }
+  .homes-brand-logo { padding: 9px 11px; }
 }
