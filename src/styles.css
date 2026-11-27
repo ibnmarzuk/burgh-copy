@@ -451,3 +451,33 @@ textarea:disabled {
 @media (prefers-reduced-motion: reduce) {
   .site-header { transition: none; }
 }
+
+
+/* Clear, high-contrast navigation labels */
+.site-header .main-nav {
+  background: #fff;
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+.site-header .main-nav button:not(.header-cta) {
+  color: #111827;
+  font-weight: 750;
+  letter-spacing: .01em;
+}
+.site-header .main-nav button:not(.header-cta):hover,
+.site-header .main-nav button:not(.header-cta).active {
+  color: #8a622d;
+}
+.site-header .main-nav .header-cta {
+  font-weight: 750;
+}
+@media (max-width: 680px) {
+  .site-header .main-nav {
+    background: #fff !important;
+    border-radius: 0;
+  }
+  .site-header .main-nav button:not(.header-cta) {
+    color: #111827 !important;
+    font-weight: 750;
+  }
+}
