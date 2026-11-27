@@ -139,9 +139,18 @@ function Logo() {
 
 function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 72)
   const path = getAppPath()
+
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 72)
+    updateHeader()
+    window.addEventListener('scroll', updateHeader, { passive: true })
+    return () => window.removeEventListener('scroll', updateHeader)
+  }, [])
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'is-scrolled' : 'is-at-top'}`}>
       <div className="container header-inner">
         <Logo />
         <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation">
